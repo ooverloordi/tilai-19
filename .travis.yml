@@ -16,7 +16,7 @@ before_script:
 - git config --global user.name "hnbot"
 - git config --global user.email "nygrenh+hnbot@gmail.com"
 - export COMMIT_MESSAGE=Update:\ $(git log -1 --pretty=%s)
-- git clone https://github.com/2017-ohjelmointi/2017-ohjelmointi.github.io.git build
+- git clone https://github.com/2017-tilai/2017-tilai.github.io.git build
 script:
 - bundle exec middleman build
 after_success:
@@ -24,7 +24,8 @@ after_success:
 - git checkout HEAD README.md .github
 - git add --all
 - git commit -m "$COMMIT_MESSAGE"
-- git push "https://hnbot:$GITHUB_API_KEY@github.com/2017-ohjelmointi/2017-ohjelmointi.github.io.git" master:master 2>&1 | sed "s/$GITHUB_API_KEY/<confidential>/g"
+- git push "https://hnbot:$GITHUB_API_KEY@github.com/2017-tilai/2017-tilai.github.io.git"
+  master:master 2>&1 | sed "s/$GITHUB_API_KEY/<confidential>/g"
 env:
   global:
-    secure: HlgQgENlU8jExlA2XZJoyZzlENctg6sSJKhutGPIfRa0seXwJS476X4Li9JroJ5kBN0ynng92POTdSinnJ0ybY9QGF5nkfmYZNCj/3xIDZObQY6sSisls6tpIQQGoB3LJ4DMkvgYGkwEV7IwFse9QgQp2NmArK4xBKkYJCEBU4I8paKQExMTCUtE5cAOCBma+H+bTT6TpAVYdtogj9ng+SMPAowkJZ+NnsuaJ90sBtEVOXTosbKS8SHPgX6XrM8UyAC8jt1NPLY1S+as8toLGu0oTx1hQf7SKs7vRUSXKKzQpvluVmffzTMtTHQjgV6b6144ric3K62nOLke2VgBNMyyVXaCJAMs4ymk2Ch3uUUupSt95HK90O6G/Q2G+A+xI3BmPyNrvXOZn4pgg/E8aJ1buSqAFIMTwUKkw6kHeD7LlBnpaeQFbpThT2I5vCKYn2APL64t+lt1uDRombmfnlp2f/SBZBqmdqeb2RNH8WKvyDgy9R7rRzntTMM1syvSh2l1bZlSWwmXBHYy/z0Ao5Cn+1YM/M+n8F1U/zP1NyojoT/3KTHDJqdD0dYycccCew3O47b5G8b3RFJCKxeSFMgt1xQAJwoI+QMccx8E+8o31S5rmxLXAvX0XswH95hvZHuI37xh1IVacmLsDcBrf3jqFxZPFQEhpEsDODj+Slw=
+    secure: VJJv+x+80hB+aZOwLFlkojR9OthbslXmlC8LICZwK2L+D8ub918GHY6gua59b2nVp6p2b8W47EuDoz9qw5lJkoFPB70q6J9QKhe5IL532lETfwDgSAPFzN+Cukp3tbm1NJzzLcHeQ46oEiCFOMY7oG4bahy4kpTPGo9os8Xqjx0xnLsqUjbE+NPdsyy444WbWefvN2uYk0h3zT6fQSwvU5MBrA8u7jHI7B9Zm4qaxTgSvepLlnLb/yAk6CsWTA3uUlmIGn1kCNRf7O2XEip6P02bMAXxdJ9RAOYtSAQDPPthYUPdVjjDRv0TYT9FUMAXy4yCu50oEr04v6SVEj07b2ezOpwdbnepxsMia/rryjlZ8UiljwnNTfeaOIGY+LCaE9nsv/C6QWx3gbVyi4aQHwmLBlDtG8GyqakWNsW995DRqWi3Ah9QRRKTTDlvSZeiGhaJ+Dxr6qgMpNlalNC1Bkv3oUbybsiZod2Zb3mIMCQRsGwNyNRJPKjwCtex8hmqayESyAumxzuxz0AlfxrMQswtQm1XhhZg3nuX8ngL1nR7CNQwZbti35uCB5rqQ4FYkcefc/lHjyxGvfRuz6UmMXYJS001Gh9ifYT71LcnYxO3pcOJPXrlxlDpOaPqryWXznxTPMST7Ea1GAykug48cWTtwZpvgETspyuANGeSElw=
