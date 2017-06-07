@@ -8,3 +8,100 @@
 <% partial 'partials/material_heading' do %>
   Toisen viikon tehtävät
 <% end %>
+
+<% partial 'partials/exercise', locals: { name: 'Sum and Cosine' } do %>
+
+  <p>
+    Tee ohjelma, missä määrität muuttujat a ja b sekä niiden summan c. <br>
+    Anna a:n arvoksi 1 ja b:n arvoksi 2.<br>
+    Tulosta sen jälkeen summa c sekä Cos(c)
+  </p>
+
+  <% partial 'partials/sample_output' do %>
+3
+-0.9899924966
+  <% end %>
+
+<% end %>
+
+  <p>
+    Tähän väliin tekstiä inputista
+  </p>
+
+<% partial 'partials/exercise', locals: { name: 'Greeter' } do %>
+
+  <p>
+    Tee ohjelma, joka kysyy käyttäjältä hänen nimeä ja ikää.<br>
+    Nimen kysymisen jälkeen ohjelma tulostaa tekstin
+  </p>
+
+  <% partial 'partials/sample_output' do %>
+What is your name? Mikko
+Nice to meet you Mikko!
+  <% end %>
+  <p>
+    Vastaustekstin jälkeen ohjelma kysyy ikää ja tulostaa kokonaisen tervehdyksen.
+  </p>
+
+  <% partial 'partials/sample_output' do %>
+Your age? 55
+So, you are already 55 years old, Mikko!
+<% end %>
+  <p>
+    Kokonaisuutena ohjelman tulostus näyttää siis seuraavalta
+  </p>
+
+  <% partial 'partials/sample_output' do %>
+What is your name? Mikko
+Nice to meet you Mikko!
+Your age? 55
+So, you are already 55 years old, Mikko!
+  <% end %>
+<% end %>
+
+  <p>
+    Tähän väliin tekstiä inputin muuntamisesta luvuksi.
+  </p>
+
+
+
+<% partial 'partials/exercise', locals: { name: 'Calculator' } do %>
+
+  <p>
+    Tee ohjelma, missä kysyt käyttäjältä kaksi lukua. <br>
+    Laske sen jälkeen näiden kahden luvun summa, tulo ja osamäärä.<br>
+    Tulosta tulokset.
+  </p>
+
+  <% partial 'partials/sample_output' do %>
+Give first integer 300
+Give second integer 9001
+9301
+2700300
+0.03332963004110654
+  <% end %>
+
+<% end %>
+
+  <p>
+    Tähän väliin tekstiä modulo-operaattorista.
+  </p>
+
+<% partial 'partials/exercise', locals: { name: 'Odd or even?' } do %>
+
+  <p>
+    Tee ohjelma, missä kysyt käyttäjältä luvun. <br>
+    Tämän jälkeen ohjelma tulostaa oliko luku parillinen vai pariton.
+  </p>
+
+  <% partial 'partials/sample_output' do %>
+Give a number to check 333
+Number 333 is odd.
+  <% end %>
+
+  <% partial 'partials/sample_output' do %>
+Give a number to check 222
+Number 222 is even.
+  <% end %>
+
+<% end %>
