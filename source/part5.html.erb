@@ -40,6 +40,9 @@ Tähän tekstiä funktioista ja esimerkki tehospektristä.
 
 <% end %>
 
+<p>
+Tähän tekstiä Python float numeroista.
+</p>
 
 <% partial 'partials/exercise', locals: { name: 'Format' } do %>
 
@@ -65,5 +68,54 @@ Tähän tekstiä funktioista ja esimerkki tehospektristä.
 11.123
 0.67 3.1416 11.123
   <% end %>
+
+<% end %>
+
+<p>
+Tähän tekstiä datan lukemisesta.
+</p>
+<% partial 'partials/exercise', locals: { name: 'Data handling' } do %>
+
+  <p>
+  Tehtäväpohjassa tulee mukana input.dat tiedosto. Tehtävänäsi on lukea input.dat tiedosto ja luoda output.dat tiedosto joka on valmiiksi LaTeX-taulukko muotoa. Output.dat tiedostossa pitää olla yhdellä rivillä 8 lukua ja rivejä pitäisi olla 25. Tehtävä on oikein kun output.dat tiedosto näyttää seuraavalta:
+  </p>
+
+  <% partial 'partials/sample_output' do %>
+  0.01  &  7.73  &  1.20  &  7.69  &  2.05  &  7.72  &  3.13  &  7.69  \\
+  4.16  &  7.69  &  5.03  &  7.70  &  5.14  &  7.71  &  5.17  &  7.73  \\
+  ...
+  <% end %>
+
+<% end %>
+
+
+<% partial 'partials/exercise', locals: { name: 'More data' } do %>
+
+  <p>
+  Tehtäväpohjassa tulee mukana input.dat tiedosto. Tehtävänäsi on lukea input.dat tiedosto missä on 528 riviä ja luoda output.dat tiedosto joka on valmiiksi LaTeX-taulukko muotoa. Output.dat tiedostossa on 50 riviä. Ensimmäisesä sarakkeessa ovat 50 ensimmäistä ajanhetken arvoa t kahden desimaalin tarkkuudella. Toisessa sarakkeessa on taas seuraavat 50 arvoa jne. Viimeisessä 11. sarakkeessa on 28 arvoa, sillä data loppuu kesken. Tehtävä on oikein kun output.dat tiedosto näyttää seuraavalta:
+  </p>
+
+  <p>
+  Kolme ensimmäistä riviä
+  </p>
+  <% partial 'partials/sample_output' do %>
+
+
+1.08 &  31.26 &  65.09 &  97.47 & 128.28 & 156.09 & 190.26 & 239.08 & 274.36 & 314.07 & 346.38 \\
+1.24 &  31.43 &  65.27 &  98.09 & 128.47 & 156.27 & 190.43 & 239.23 & 277.07 & 314.22 & 347.38 \\
+1.40 &  32.09 &  65.46 &  98.28 & 132.09 & 156.46 & 191.09 & 239.38 & 277.22 & 314.36 & 348.08 \\
+  <% end %>
+  <p>
+  Kolme viimeistä riviä
+  </p>
+
+<% partial 'partials/sample_output' do %>
+
+
+29.25 &  62.09 &  94.47 & 127.28 & 154.09 & 188.26 & 238.08 & 272.36 & 308.07 & 345.38 &  \\
+29.43 &  62.27 &  97.09 & 127.47 & 154.28 & 188.43 & 238.23 & 274.07 & 308.22 & 346.08 &  \\
+31.09 &  62.45 &  97.28 & 128.09 & 154.46 & 190.09 & 238.38 & 274.22 & 308.36 & 346.23 &  \\
+ <% end %>
+
 
 <% end %>
