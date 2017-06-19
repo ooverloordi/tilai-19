@@ -59,3 +59,52 @@ Tähän tekstiä suoran sovittamisesta ja PNS-menetelmästä.
 
 <% end %>
 
+<% partial 'partials/exercise', locals: { name: 'Least Squares Nonlinear' } do %>
+
+  <p>
+  Tehtäväpohja on seuraavanlainen:
+  </p>
+
+  <% partial 'partials/code_highlight' do %>
+  def main():
+    #Generate random data
+    xdata = np.linspace(-3,7,75)
+    y_noise = 0.5 * np.random.normal(size=xdata.size)
+    ydata = xdata**2 + y_noise
+  <% end %>
+
+  <p>
+  Tehtävänäsi on käyttää SciPyn Least square funktiota ja tehdä X^2 sovitus generoituun dataan. Muista tulostaa saamasi parametrit, jotta tarkistus menee läpi!
+  </p>
+
+  <% partial 'partials/sample_output' do %>
+[-0.02469396  0.99438934]
+  <% end %>
+
+<% end %>
+
+
+
+<% partial 'partials/exercise', locals: { name: 'Least Squares Sine and Cosine' } do %>
+
+  <p>
+  Tehtäväpohja on seuraavanlainen:
+  </p>
+
+  <% partial 'partials/code_highlight' do %>
+  def main():
+    #Generate random data
+    xdata = np.linspace(0,2*np.pi,100)
+    y_noise = 0.2 * np.random.normal(size=xdata.size)
+    ydata = np.sin(xdata) + np.cos(xdata) + y_noise
+  <% end %>
+
+  <p>
+  Tehtävänäsi on käyttää SciPyn Least square funktiota ja tehdä Asin(x) + Bcos(x) sovitus generoituun dataan. Muista tulostaa saamasi parametrit, jotta tarkistus menee läpi!
+  </p>
+
+  <% partial 'partials/sample_output' do %>
+[ 1.00423816  0.99764248]
+  <% end %>
+
+<% end %>
