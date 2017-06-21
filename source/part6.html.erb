@@ -10,27 +10,25 @@
 Tähän tekstiä suoran sovittamisesta ja PNS-menetelmästä.
 </p>
 
-<% partial 'partials/exercise', locals: { name: 'Curve Fit' } do %>
+<% partial 'partials/exercise', locals: { name: 'Resistance' } do %>
 
   <p>
   Tehtäväpohja on seuraavanlainen:
   </p>
 
   <% partial 'partials/code_highlight' do %>
+  def func(param, xdata, ydata):
+    return ydata - (param[0] + param[1]*xdata)
   def main():
-    #Generoidaan random dataa
-    xdata = np.linspace(0,4,50)
-    y = func(xdata, 2, 3, 1)
-    y_noise = 0.2 * np.random.normal(size=xdata.size)
-    ydata = y + y_noise
+
   <% end %>
 
   <p>
-  Tehtävänäsi on käyttää SciPyn Curve fit funktiota ja tehdä sovitus generoituun dataan. Muista tulostaa saamasi parametrit, jotta tarkistus menee läpi!
+  Tehtävänäsi on käyttää SciPyn Least square funktiota ja tehdä laboratoriosta saatuun dataan suoran sovitus. Data löytyy tiedostosta input.dat. Datassa ensimmäinen sarake on virta ja toinen sarake on jännite. Ratkaiset siis resistanssia. Muista tulostaa saamasi kulmakerroin, jotta tarkistus menee läpi!
   </p>
 
   <% partial 'partials/sample_output' do %>
-[ 1.7763289   3.02012127  1.06947269]
+R = 0.56
   <% end %>
 
 <% end %>
@@ -105,6 +103,32 @@ Tähän tekstiä suoran sovittamisesta ja PNS-menetelmästä.
 
   <% partial 'partials/sample_output' do %>
 [ 1.00423816  0.99764248]
+  <% end %>
+
+<% end %>
+
+
+<% partial 'partials/exercise', locals: { name: 'Curve Fit' } do %>
+
+  <p>
+  Tehtäväpohja on seuraavanlainen:
+  </p>
+
+  <% partial 'partials/code_highlight' do %>
+  def main():
+    #Generoidaan random dataa
+    xdata = np.linspace(0,4,50)
+    y = func(xdata, 2, 3, 1)
+    y_noise = 0.2 * np.random.normal(size=xdata.size)
+    ydata = y + y_noise
+  <% end %>
+
+  <p>
+  Tehtävänäsi on käyttää SciPyn Curve fit funktiota ja tehdä sovitus generoituun dataan. Muista tulostaa saamasi parametrit, jotta tarkistus menee läpi!
+  </p>
+
+  <% partial 'partials/sample_output' do %>
+[ 1.7763289   3.02012127  1.06947269]
   <% end %>
 
 <% end %>
