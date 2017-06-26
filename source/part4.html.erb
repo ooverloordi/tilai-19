@@ -13,55 +13,31 @@ While ja for loopista sekä if-lauseista.
 
 <% partial 'partials/exercise', locals: { name: 'Looping' } do %>
 
-  <p>
-    While loop osuus:
-  </p>
-
-  <p>
-    Määritä muuttujat x = 0 ja i = 0. <br>
-    Aseta While loopin ehdoksi (i < 20), eli looppi jatkuu niin kauan kun i < 20. <br>
-    Seuraavaksi määritä kun i < 10 niin  x kasvaa i:n verran ja i kasvaa kahdella. <br>
-    Lisäksi määritä kun i >= 10 niin x kasvaa i:n verran ja i kasvaa yhdellä. <br>
-    Tulosta lopuksi x:n arvo.
-  </p>
-  <% partial 'partials/sample_output' do %>
-    While loop sum
-    165
+<p>
+Tehtäväpohja näyttää seuraavalta
+</p>
+  <% partial 'partials/code_highlight' do %>
+  def main():
+####################################################
+    arvattava = 42
+    arvaukset = 0
+    arvaus = 0
+####################################################
+#############TEE TEHTÄVÄ TÄMÄN ALAPUOLELLE##########
   <% end %>
 
-  <p>
-    For loop osuus:
-  </p>
+<p>
+Tehtävänäsi on tehdä ohjelma joka lukee käyttäjältä arvauksen ja kertoo onko käyttäjän arvaama luku suurempi vai pienempi kuin arvattava luku. Lisäksi ohjelma laskee käyttäjän arvauksien määrän.
+</p>
 
-  <p>
-    Tee For loop "vesiputous". Tulosta for loopissa luvut 1-20 seuraavasti.
-  </p>
-
-  <% partial 'partials/sample_output' do %>
-    For Waterfall
-1
-2
-3
-4
-5
-     6
-     7
-     8
-     9
-     10
-          11
-          12
-          13
-          14
-          15
-               16
-               17
-               18
-               19
-               20
-
-  <% end %>
-
+<% partial 'partials/sample_output' do %>
+Arvaa luku 40
+Lukuni on suurempi
+Arvaa luku 44
+Lukuni on pienempi
+Arvaa luku 42
+Arvasit oikein  2  arvauksella
+<% end %>
 <% end %>
 
 
