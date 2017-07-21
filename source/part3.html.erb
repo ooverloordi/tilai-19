@@ -3,84 +3,99 @@
   exercise_page: true
   quiz_page: false
 ---
+
 <% partial 'partials/material_heading' do %>
   Kolmannen viikon tehtävät
 <% end %>
 <p>
-Tähän tekstiä Numpysta
+While ja for loopista sekä if-lauseista.
 </p>
 
-<% partial 'partials/exercise', locals: { name: 'Trigonometry' } do %>
+<% partial 'partials/exercise', locals: { name: 'Looping' } do %>
+
+<p>
+Tehtäväpohja näyttää seuraavalta
+</p>
+  <% partial 'partials/code_highlight' do %>
+  def main():
+####################################################
+    arvattava = 42
+    arvaukset = 0
+    arvaus = 0
+####################################################
+#############TEE TEHTÄVÄ TÄMÄN ALAPUOLELLE##########
+  <% end %>
+
+<p>
+Tehtävänäsi on tehdä ohjelma joka lukee käyttäjältä arvauksen ja kertoo onko käyttäjän arvaama luku suurempi vai pienempi kuin arvattava luku. Lisäksi ohjelma laskee käyttäjän arvauksien määrän.
+</p>
+
+<% partial 'partials/sample_output' do %>
+Arvaa luku 40
+Lukuni on suurempi
+Arvaa luku 44
+Lukuni on pienempi
+Arvaa luku 42
+Arvasit oikein  2  arvauksella
+<% end %>
+<% end %>
+
+
+<p>
+Tähän tekstiä random funktiosta
+</p>
+
+<% partial 'partials/exercise', locals: { name: 'Random angle' } do %>
 
   <p>
-    Käytä Numpy-modulia ja Tulosta &#928;:n arvo,  Sin(&#928;), Cos(&#928;) ja Tan(&#928;)<br>
-    sekä luku 1, Arcsin(1), Arccos(1) ja Arctan(1)
+    Tehtäväpohjassa on valmiiksi koodi joka arpoo ensin radiaaneja ja muuntaa sen tämän jälkeen kulmaksi. Kulmaluku voi siis olla yli yhden kierroksen. Tehtävänäsi on kirjoittaa valmiiksi annetun osuuden jälkeen koodi joka kertoo mihin yksikköympyrän neljännekseen arvottu kulma sijoittuu.
   </p>
 
   <% partial 'partials/sample_output' do %>
-3.141592653589793
-1.22464679915e-16
--1.0
--1.22464679915e-16
-1
-1.57079632679
-0.0
-0.785398163397
+  Arvottu luku  0.33797175599533125
+  on alueen (0,1) keskella
+  Arvottu kulma = 337.97175599533125  astetta
+  on 4. neljanneksessa
+  <% end %>
+
+ <% partial 'partials/sample_output' do %>
+  Arvottu luku  0.09602578231894476
+  on alueen (0,1) alussa
+  Arvottu kulma = 96.02578231894476  astetta
+  on 2. neljanneksessa
+<% end %>
+
+<% end %>
+
+
+<p>
+Tähän tekstiä omien funktioiden luomisesta.
+</p>
+
+<% partial 'partials/exercise', locals: { name: 'Factorial' } do %>
+
+  <p>
+    Main ohjelmarungossa on valmiiksi print(factorial(12)). Tehtäväsi on kirjoittaa factorial(n) funktio mikä laskee annetun luvun n kertoman ja palauttaa sen. Tulosta lopuksi mainissa oleva factorial(12).
+  </p>
+
+  <% partial 'partials/sample_output' do %>
+  479001600
   <% end %>
 
 <% end %>
 
 
-<% partial 'partials/exercise', locals: { name: 'Exponent and logarithms' } do %>
+<% partial 'partials/exercise', locals: { name: 'Exponential function' } do %>
 
   <p>
-    Käytä Numpy-modulia ja tulosta e:n arvo, ln(e), log<sub>10</sub>(e), log<sub>2</sub>(e)<br>
-    sekä luku 2, e<sup>2</sup> ja e<sup>4*2</sup>
+    Main ohjelmarungossa on valmiiksi print(exponential(1,100)). Tehtävänäsi on kirjoittaa funktio joka laskee e<sup>x</sup> funktion Taylorin sarjan arvon pisteessä x, n:n termin tarkkuudella. Mainissa oleva funktio kutsu siis tarkoittaa e<sup>1</sup> arvoa 100 termin tarkkuudella. Vinkki: käytä edellisessä tehtävässä luomaasi kertoma funktiota. Voit kutsua toista funktiota toisen sisällä aivan kuin kutsut sitä mainissakin.
   </p>
 
   <% partial 'partials/sample_output' do %>
-2.718281828459045
-1.0
-0.434294481903
-1.44269504089
-2
-7.38905609893
-2980.95798704
+  2.7182818284590455
   <% end %>
 
 <% end %>
 
-<% partial 'partials/exercise', locals: { name: 'Complex numbers' } do %>
 
-  <p>
-    Käytä Numpy-modulia ja määritä kompleksiluvut a = (0 + i)<sup>2</sup>, b = 1 + i, c = 2 + 3i ja tulosta ne.<br>
-    Tulosta sen jälkeen d = b + c, d:n realiosa, d:n imaginääriosa, d:n komponenttien välinen kulma ja d:n konjugaatti.
-  </p>
-
-  <% partial 'partials/sample_output' do %>
-(-1+0j)
-(1+1j)
-(2+3j)
-(3+4j)
-3.0
-4.0
-0.927295218002
-(3-4j)
-  <% end %>
-<% end %>
-
-<% partial 'partials/exercise', locals: { name: 'Miscellaneous functions' } do %>
-
-  <p>
-    Käytä Numpy-modulia ja määritä luvut x = 9 ja y = -9.<br>
-    Laske sen jälkeen luvusta x neliöjuuri, luvusta y itseisarvo, luvusta x kuutiojuuri ja luvusta y kuutiojuuri ja lopuksi tulosta ne. Vihje: numpy.sqrt ja numpy.cbrt jne...
-  </p>
-
-  <% partial 'partials/sample_output' do %>
-3.0
-9
-2.08008382305
--2.08008382305
-  <% end %>
-<% end %>
 

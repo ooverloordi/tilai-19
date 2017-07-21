@@ -1,27 +1,87 @@
 ---
-  title: Osa 2
+  title: Viikko 2
   exercise_page: true
-  quiz_page: true
+  quiz_page: false
 ---
-
-
 <% partial 'partials/material_heading' do %>
   Toisen viikon tehtävät
 <% end %>
+<p>
+Tähän tekstiä Numpysta
+</p>
 
-<% partial 'partials/exercise', locals: { name: 'Sum and Cosine' } do %>
+<% partial 'partials/exercise', locals: { name: 'Trigonometry' } do %>
 
   <p>
-    Tee ohjelma, missä määrität muuttujat a ja b sekä niiden summan c. <br>
-    Anna a:n arvoksi 1 ja b:n arvoksi 2.<br>
-    Tulosta sen jälkeen summa c sekä Cos(c)
+    Käytä Numpy-modulia ja Tulosta &#928;:n arvo,  Sin(&#928;), Cos(&#928;) ja Tan(&#928;)<br>
+    sekä luku 1, Arcsin(1), Arccos(1) ja Arctan(1)
   </p>
 
   <% partial 'partials/sample_output' do %>
-3
--0.9899924966
+3.141592653589793
+1.22464679915e-16
+-1.0
+-1.22464679915e-16
+1
+1.57079632679
+0.0
+0.785398163397
   <% end %>
 
+<% end %>
+
+
+<% partial 'partials/exercise', locals: { name: 'Exponent and logarithms' } do %>
+
+  <p>
+    Käytä Numpy-modulia ja tulosta e:n arvo, ln(e), log<sub>10</sub>(e), log<sub>2</sub>(e)<br>
+    sekä luku 2, e<sup>2</sup> ja e<sup>4*2</sup>
+  </p>
+
+  <% partial 'partials/sample_output' do %>
+2.718281828459045
+1.0
+0.434294481903
+1.44269504089
+2
+7.38905609893
+2980.95798704
+  <% end %>
+
+<% end %>
+
+<% partial 'partials/exercise', locals: { name: 'Complex numbers' } do %>
+
+  <p>
+    Käytä Numpy-modulia ja määritä kompleksiluvut a = (0 + i)<sup>2</sup>, b = 1 + i, c = 2 + 3i ja tulosta ne.<br>
+    Tulosta sen jälkeen d = b + c, d:n realiosa, d:n imaginääriosa, d:n komponenttien välinen kulma ja d:n konjugaatti.
+  </p>
+
+  <% partial 'partials/sample_output' do %>
+(-1+0j)
+(1+1j)
+(2+3j)
+(3+4j)
+3.0
+4.0
+0.927295218002
+(3-4j)
+  <% end %>
+<% end %>
+
+<% partial 'partials/exercise', locals: { name: 'Miscellaneous functions' } do %>
+
+  <p>
+    Käytä Numpy-modulia ja määritä luvut x = 9 ja y = -9.<br>
+    Laske sen jälkeen luvusta x neliöjuuri, luvusta y itseisarvo, luvusta x kuutiojuuri ja luvusta y kuutiojuuri ja lopuksi tulosta ne. Vihje: numpy.sqrt ja numpy.cbrt jne...
+  </p>
+
+  <% partial 'partials/sample_output' do %>
+3.0
+9
+2.08008382305
+-2.08008382305
+  <% end %>
 <% end %>
 
   <p>
@@ -83,25 +143,3 @@ Give second integer 9001
 
 <% end %>
 
-  <p>
-    Tähän väliin tekstiä modulo-operaattorista.
-  </p>
-
-<% partial 'partials/exercise', locals: { name: 'Odd or even?' } do %>
-
-  <p>
-    Tee ohjelma, missä kysyt käyttäjältä luvun. <br>
-    Tämän jälkeen ohjelma tulostaa oliko luku parillinen vai pariton.
-  </p>
-
-  <% partial 'partials/sample_output' do %>
-Give a number to check 333
-Number 333 is odd.
-  <% end %>
-
-  <% partial 'partials/sample_output' do %>
-Give a number to check 222
-Number 222 is even.
-  <% end %>
-
-<% end %>

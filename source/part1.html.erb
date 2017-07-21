@@ -5,7 +5,7 @@
 ---
 
 <% partial 'partials/material_heading' do %>
-  Ennenkuin aloitat...
+  Ennen kuin aloitat...
 <% end %>
 
 <% partial 'partials/material_sub_heading' do %>
@@ -290,3 +290,42 @@ Tähän voisi laittaa tekstiä muuttujista.
   <% end %>
 
 <% end %>
+
+<% partial 'partials/exercise', locals: { name: 'Sum and Cosine' } do %>
+
+  <p>
+    Tee ohjelma, missä määrität muuttujat a ja b sekä niiden summan c. <br>
+    Anna a:n arvoksi 1 ja b:n arvoksi 2.<br>
+    Tulosta sen jälkeen summa c sekä Cos(c)
+  </p>
+
+  <% partial 'partials/sample_output' do %>
+3
+-0.9899924966
+  <% end %>
+
+<% end %>
+
+  <p>
+    Tähän väliin tekstiä modulo-operaattorista.
+  </p>
+
+<% partial 'partials/exercise', locals: { name: 'Odd or even?' } do %>
+
+  <p>
+    Tee ohjelma, missä kysyt käyttäjältä luvun. <br>
+    Tämän jälkeen ohjelma tulostaa oliko luku parillinen vai pariton.
+  </p>
+
+  <% partial 'partials/sample_output' do %>
+Give a number to check 333
+Number 333 is odd.
+  <% end %>
+
+  <% partial 'partials/sample_output' do %>
+Give a number to check 222
+Number 222 is even.
+  <% end %>
+
+<% end %>
+
