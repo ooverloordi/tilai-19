@@ -229,10 +229,6 @@ Hei maailma!
 
 <% end %>
 
-<p>
-Tähän voisi laittaa tekstiä
-</p>
-
 <% partial 'partials/exercise', locals: { name: 'Square' } do %>
 
   <p>
@@ -250,7 +246,26 @@ Tähän voisi laittaa tekstiä
 <% end %>
 
 <p>
-Tähän voisi laittaa taas tekstiä for-loopista
+For-loop rakenne on kätevä apuneuvo, kun tahdotaan käydä esimerkiksi listoja läpi tai jos halutaan toistaa jotain asiaa tietty määrä. Esimerkiksi edellinen tehtävä on paljon lyhyempi tehdä for-loopilla kuin kirjoittaa kaikki print-komennot itse.
+</p>
+
+<p>
+For-loopin rakenne on luennolta tuttu:
+<% partial 'partials/code_highlight' do %>
+  for val in sequence:
+	        Body of for
+  <% end %>
+
+Missä val on arvo ja sequence on läpi käytävä kohde.
+</p>
+
+<p>
+Esimerkiksi seuraava koodi tulostaa numerot 0-4
+<% partial 'partials/code_highlight' do %>
+  for i in range(5):
+        print(i)
+  <% end %>
+
 </p>
 
 <% partial 'partials/exercise', locals: { name: 'Lazy-Square' } do %>
