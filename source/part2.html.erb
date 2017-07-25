@@ -99,10 +99,22 @@ Tarvitsemme NumPyä käytännössä heti kun haluamme ratkaista muuta kuin perus
   <% end %>
 <% end %>
 
-  <p>
+<p>
+Python sisältää itsessään syötteen käsittelyyn tarvittan input-funktion. Inputin käyttö tapahtuu seuraavasti:
+</p>
+<% partial 'partials/code_highlight' do %>
+  nimi = input("Kerro nimesi ")
+  <% end %>
 
-  </p>
-
+<p>
+Ylläoleva koodi tuottaa seuraavan:
+</p>
+<% partial 'partials/sample_output' do %>
+Kerro nimesi
+  <% end %>
+<p>
+  Input on Pythonissa string muotoista eli sitä ei voi suoraan käyttää esimerkiksi muuttujan arvojen antamiseksi.
+</p>
 <% partial 'partials/exercise', locals: { name: 'Greeter' } do %>
 
   <p>
@@ -135,9 +147,12 @@ So, you are already 55 years old, Mikko!
 <% end %>
 
   <p>
-    Tähän väliin tekstiä inputin muuntamisesta luvuksi.
+    Inputin muuntaminen numeroarvoksi on todella yksinkertaista. Tarvitset siihen vain eval-komentoa.
   </p>
 
+  <% partial 'partials/code_highlight' do %>
+  arvo = eval(input("Anna luku "))
+  <% end %>
 
 
 <% partial 'partials/exercise', locals: { name: 'Calculator' } do %>
