@@ -285,8 +285,31 @@ Esimerkiksi seuraava koodi tulostaa numerot 0-4
 <% end %>
 
 <p>
-Tähän voisi laittaa tekstiä muuttujista.
+Pythonissa muuttujat esitetään yhtäsuuruusmerkin vasemmalla puolella ja oikealla puolella sille asetettava arvo. Muuttujan nimessä ei saa olla välilyöntejä, ja muuttujat kirjoitetaan pienillä kirjaimilla. Muuttujien nimet eivät myöskään saa alkaa numerolla.
 </p>
+
+<p>
+Luennolla käytiin läpi peruslaskutoimitukset.
+</p>
+
+
+<ul>
+  <li>
+    summa +
+  </li>
+  <li>
+    erotus -
+  </li>
+  <li>
+    kertolasku *
+  </li>
+  <li>
+    potenssi **
+  </li>
+  <li>
+    jakolasku /
+  </li>
+</ul>
 
 <% partial 'partials/exercise', locals: { name: 'Seconds in year' } do %>
 
@@ -322,7 +345,14 @@ Tähän voisi laittaa tekstiä muuttujista.
 <% end %>
 
   <p>
-    Tähän väliin tekstiä modulo-operaattorista.
+    Pythonissa jakojäännöksen selvittäminen onnistuu helpoiten modulo-operaattorilla. Modulo-operaattoria merkitään Pythonissa %-merkillä. Modulo-operaattori palauttaa suoraan jakojäännöksen.
+  </p>
+
+  <p>
+Esimerkiksi 6%2 palauttaa 0.
+  </p>
+  <p>
+Esimerkiksi 7%2 palauttaa 1.
   </p>
 
 <% partial 'partials/exercise', locals: { name: 'Odd or even?' } do %>
