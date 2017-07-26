@@ -36,7 +36,51 @@ Ylläoleva ohjelma tulostaa seuraavan:
 Summa välillä 1 - 100 on 5050
 <% end %>
 
+<p>
+Ohjelmointitehtävissä törmää myös usein ongelmiin missä muuttujan on täytettävä tietty ehto jotta jotain tapahtuu. Näitä kutsutaan if-lauseiksi. Python3:ssa if-lauseiden runko on seuraava:
+</p>
 
+<% partial 'partials/code_highlight' do %>
+    if condition :
+      indentedStatementBlock
+  <% end %>
+
+<p>
+Lisäksi usein if-lauseita "jatketaan" else rakenteella, joka toimii samalla tavalla.
+</p>
+
+<% partial 'partials/code_highlight' do %>
+
+    if condition :
+      indentedStatementBlockForTrueCondition
+    else:
+      indentedStatementBlockForFalseCondition
+
+  <% end %>
+<p>
+Luennolla käydään läpi vertailuoperaattorit:
+</p>
+
+<ul>
+  <li>
+    yhtäsuuri ==
+  </li>
+  <li>
+    pienempi <
+  </li>
+  <li>
+    suurempi >
+  </li>
+  <li>
+    suurempi tai yhtäsuuri >=
+  </li>
+  <li>
+    pienempi tai yhtäsuuri <=
+  </li>
+  <li>
+    erisuuri !=
+  </li>
+</ul>
 <% partial 'partials/exercise', locals: { name: 'Looping' } do %>
 
 <p>
@@ -67,10 +111,6 @@ Arvasit oikein  2  arvauksella
 <% end %>
 
 
-<p>
-Tähän tekstiä random funktiosta
-</p>
-
 <% partial 'partials/exercise', locals: { name: 'Random angle' } do %>
 
   <p>
@@ -95,7 +135,44 @@ Tähän tekstiä random funktiosta
 
 
 <p>
-Tähän tekstiä omien funktioiden luomisesta.
+Vaikka Pythonissa on lukuisia kirjastoja, mitkä tarjoavat valmiita ratkaisuja ongelmiin, silti välillä joudutaan tekemään omia funktioita. Monissa tieteellisen laskennan ongelmissa joudutaan tekemään omia funktioita. Myöhemmin tällä kurssilla teemme esimerkiksi Rayleigh-testin datalle.
+</p>
+
+<p>
+Pythonin funktiorakenne on yksinkertainen:
+</p>
+
+<% partial 'partials/code_highlight' do %>
+def funktion_nimi(parametrit):
+    funktionRakenneTänne
+  <% end %>
+
+<p>
+Esimerkiksi funktio joka muuttaa Celsius-asteet Fahrenheiteiksi on seuraavanlainen:
+</p>
+
+
+<% partial 'partials/code_highlight' do %>
+def fahrenheit(TCelsius):
+    return (TCelsius * 9/5) + 32
+  <% end %>
+
+<p>
+Mainissa fahrenheit-funktiota kutsuttaisiin esimerkiksi seuraavasti:
+</p>
+
+<% partial 'partials/code_highlight' do %>
+def main():
+    print(fahrenheit(12))
+def fahrenheit(TCelsius):
+    return (TCelsius * 9/5) + 32
+  <% end %>
+
+<p>
+Huomaa että tehtäväpohjissa nähty main on siis oikeasti myös funktio joka sisältää pääohjelman!
+</p>
+  <p>
+Funktion rakenne voi sisältää lähes mitä vain. Esimerkiksi for, while ja if-rakenteita.
 </p>
 
 <% partial 'partials/exercise', locals: { name: 'Factorial' } do %>
