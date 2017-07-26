@@ -8,8 +8,34 @@
   Kolmannen viikon tehtävät
 <% end %>
 <p>
-While ja for loopista sekä if-lauseista.
+Pythonissa on for-loopin lisäksi käytössä myös mm. while-loop. While loop toimii periaatteessa samalla tavalla kuin for, mutta se jatkaa toistoa niin kauan kuin sille määritelty ehto on totta. Puhutaan ns. "Condition-Controlled" ja "Collection-Controlled" loopeista.
 </p>
+
+<p>
+Kokeillaa esimerkiksi seuraavaa koodia:
+</p>
+
+<% partial 'partials/code_highlight' do %>
+n = 100
+s = 0
+luku = 1
+
+while luku <= n:
+    s = s + luku
+    luku += 1
+
+print("Summa välillä 1 - %d on %d" % (n,s))
+  <% end %>
+
+<p>
+Ylläoleva ohjelma tulostaa seuraavan:
+</p>
+
+
+<% partial 'partials/sample_output' do %>
+Summa välillä 1 - 100 on 5050
+<% end %>
+
 
 <% partial 'partials/exercise', locals: { name: 'Looping' } do %>
 
