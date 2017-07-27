@@ -7,9 +7,7 @@
 <% partial 'partials/material_heading' do %>
   Neljännen viikon tehtävät
 <% end %>
-<p>
-Tähän tekstiä funktioista ja esimerkki tehospektristä.
-</p>
+
 
 <% partial 'partials/exercise', locals: { name: 'More functions' } do %>
 
@@ -30,9 +28,31 @@ Tähän tekstiä funktioista ja esimerkki tehospektristä.
   <% end %>
 
   <p>
-  Tulet tarvitsemaan tämän tehtävän koodia myöhemmin tällä kurssila, pidä se siis tallessa! Sinun tehtäväsi on luoda funktio joka laskee datan periodisuuden. Funktio laskee taun arvon ja palauttaa. Taun arvo on "sovitus" datasta ja sen avulla dataan saadaan periodisuus. Saadaksesi arvot Z1 ja Z2 tarvitset taun arvoa. Z1 ja Z2 muodostavat tehospektrin. <br>
+  Tulet tarvitsemaan tämän tehtävän koodia myöhemmin tällä kurssila, pidä se siis tallessa! Sinun tehtäväsi on luoda funktio joka laskee datan periodisuuden. Funktio laskee taun arvon ja palauttaa. Taun arvo on "sovitus" datasta ja sen avulla dataan saadaan periodisuus.
+  </p>
+<p>
+Tau lasketaan seuraavasti:
+</p>
+<img src="https://raw.githubusercontent.com/2017-tilai/2017-tilai/master/source/taulasku.gif" alt="Taun lauseke">
+  <p>
+  Saadaksesi arvot Z1 ja Z2 tarvitset taun arvoa. Z1 ja Z2 muodostavat tehospektrin.
+  </p>
+<p>
+Z1 lasketaan seuraavasti:
+</p>
+<img src="https://raw.githubusercontent.com/2017-tilai/2017-tilai/master/source/Z1lasku.gif" alt="Z1 lauseke">
+
+
+<p>
+Z2 lasketaan seuraavasti:
+</p>
+<img src="https://raw.githubusercontent.com/2017-tilai/2017-tilai/master/source/Z2lasku.gif" alt="Z2 lauseke">
+  <p>
   Aloita tehtävä tekemällä aliohjelma1(t,f) joka laskee taun arvon. Luo seuraavaksi aliohjelma2(t, ydot, f, tau) joka laskee Z1 ja Z2 arvot. Tulosta lopuksi saadut arvot:
   </p>
+
+
+
 
   <% partial 'partials/sample_output' do %>
 0.0496453900709 1.14844141687 11.8561720281
@@ -41,7 +61,8 @@ Tähän tekstiä funktioista ja esimerkki tehospektristä.
 <% end %>
 
 <p>
-Tähän tekstiä Python float numeroista.
+Python3 float-tyypillä on monia ominaisuuksia. Datan käsittelyssä tahdomme usein vähentää desimaaleja. Tutustu laajaan formatointi ohjeeseen
+<a href="http://www.python-course.eu/python3_formatted_output.php"target="_blank">täällä</a>
 </p>
 
 <% partial 'partials/exercise', locals: { name: 'Format' } do %>
