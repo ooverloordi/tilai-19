@@ -93,8 +93,66 @@ Python3 float-tyypillä on monia ominaisuuksia. Datan käsittelyssä tahdomme us
 <% end %>
 
 <p>
-Tähän tekstiä datan lukemisesta.
+Mittauksista ja muista tutkimuksista saadaan usein isoja jopa tuhansien rivien datatiedostoja. Näiden käsittelyyn Python3 on tehokas työkalu.
 </p>
+
+<p>
+Datan käsittely tapahtuu Python3:ssa helpoiten file-komennolla. Ensin määritellään mitä tiedostoa käsitellään, kuinka sitä käsitellään ja mitä sitten tehdään. Lopuksi tiedosto suljetaan, jottei se korruptoidu.
+</p>
+
+<% partial 'partials/code_highlight' do %>
+  def main():
+     file = open('input.dat', 'r')
+  <% end %>
+
+<p>
+Ylläoleva komento avaa tiedoston input.dat ja asettaa sen lukutilaan. Lukutilassa voimme kätevästi siirtää datatiedoston arvoja muuttujiin.
+</p>
+
+<% partial 'partials/code_highlight' do %>
+  def main():
+     file = open('input.dat', 'r')
+     tiedot = file.readlines()
+
+     x = []
+     y = []
+
+     for rivi in tiedot:
+        osarivi = rivi.split()
+        x.append(float(osarivi[0]))
+        y.append(float(osarivi[1]))
+  <% end %>
+
+<p>
+Ylläoleva koodi siis avaa input.dat tiedoston ja lukee siitä kaksi saraketta muuttujiin x ja y.
+</p>
+
+<p>
+Vastaavasti tiedostoon kirjoittaminen toimii lähes samallatavalla.
+</p>
+
+<% partial 'partials/code_highlight' do %>
+  def main():
+     file = open('output.dat', 'w')
+  <% end %>
+
+<p>
+Nyt olemme alustaneet output.dat tiedoston ja määrittäneet että siihen tallennetaan tietoa. Seuraava vaihe riippuu täysin siitä mitä tiedostoon halutaan laittaa, mutta esimerkiksi lukujen kirjoitus tapahtuisi seuraavasti:
+</p>
+
+<% partial 'partials/code_highlight' do %>
+     file = open('output.dat', 'w')
+     i = 0
+     while (i < len(x)):
+        file.write("%6.2f\n"%(x[i]))
+        i++
+    file.close()
+  <% end %>
+
+  <p>
+Tämä koodi kirjoittaa kuvitellun muuttujan x listan kokonaisuudessaan output.dat tiedostoon, siten että luvut ovat allekkain.
+  </p>
+
 <% partial 'partials/exercise', locals: { name: 'Data handling' } do %>
 
   <p>
