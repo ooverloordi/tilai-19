@@ -7,7 +7,37 @@
   Viidennen viikon tehtävät
 <% end %>
 <p>
-Tähän tekstiä suoran sovittamisesta ja PNS-menetelmästä.
+Varsinkin laboratoriotöissä haluamme usein sovittaa dataan suoran tai käyrän, sekä tietää sen yhtälön. Pythonin avulla tämä käy nopeasti hyödyntämällä pienimmän neliösumman menetelmää. Wikipedia kertoo asiasta näin: "Pienimmän neliösumman menetelmässä regressiokertoimien estimaattorit määrätään minimoimalla jäännös- eli virhetermien neliösumma. Saaduilla estimaateilla voidaan siten muodostaa estimoitu regressiosuora, eli malli kuvaamaan selitettävän muuttujan vaihtelua. "
+</p>
+
+<p>
+Pythonin leastsq-funktiota joka käyttää PNS-menetelmää kutsutaan seuraavasti:
+</p>
+
+<% partial  'partials/code_highlight' do %>
+  def residuals(param, xdata, ydata):
+    return ydata - (param[0] + param[1]*xdata)
+  def main():
+    x0 = np.array([0,0])
+    tu = leastsq(residuals, x0, args=(xdata, ydata))
+<% end %>
+
+<p>
+Leastsq vaatii siis residuals funktion (joka laskee virhetermit), alkuarvauksen sekä argumenteiksi dataa. Nyt saamme sovitetun funktion seuraavalla tavalla:
+</p>
+
+<% partial  'partials/code_highlight' do %>
+  def residuals(param, xdata, ydata):
+    return ydata - (param[0] + param[1]*xdata)
+  def main():
+    x0 = np.array([0,0])
+    tu = leastsq(residuals, x0, args=(xdata, ydata))
+    yfit = tu[0] #Saadut parametrit
+    fitFunc = yfit[0] + yfit[1]*xdata
+<% end %>
+
+<p>
+fitFuncin voimme plotata hyödyntämällä pyplottia.
 </p>
 
 <% partial 'partials/exercise', locals: { name: 'Resistance' } do %>
