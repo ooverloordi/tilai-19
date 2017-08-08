@@ -344,33 +344,4 @@ Luennolla käytiin läpi peruslaskutoimitukset.
 
 <% end %>
 
-  <p>
-    Pythonissa jakojäännöksen selvittäminen onnistuu helpoiten modulo-operaattorilla. Modulo-operaattoria merkitään Pythonissa %-merkillä. Modulo-operaattori palauttaa suoraan jakojäännöksen.
-  </p>
-
-  <p>
-Esimerkiksi 6%2 palauttaa 0.
-  </p>
-  <p>
-Esimerkiksi 7%2 palauttaa 1.
-  </p>
-
-<% partial 'partials/exercise', locals: { name: 'Odd or even?' } do %>
-
-  <p>
-    Tee ohjelma, missä kysyt käyttäjältä luvun. <br>
-    Tämän jälkeen ohjelma tulostaa oliko luku parillinen vai pariton.
-  </p>
-
-  <% partial 'partials/sample_output' do %>
-Give a number to check 333
-Number 333 is odd.
-  <% end %>
-
-  <% partial 'partials/sample_output' do %>
-Give a number to check 222
-Number 222 is even.
-  <% end %>
-
-<% end %>
 
