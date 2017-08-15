@@ -213,6 +213,22 @@ All tests passed on server!
 Model solution:
 <% end %>
 
+<% partial 'partials/material_sub_heading' do %>
+  Tehtävien päivitysten tarkistaminen
+<% end %>
+
+<p>
+Tehtäviin voi tulla päivityksiä ja korjauksia kurssin aikana. Päivityksien tarkistaminen tapahtuu seuraavasti.
+</p>
+
+<% partial 'partials/code_highlight' do %>
+~/TiLaI2017/fyl-fyl-tilaI$ tmc update
+<% end %>
+
+<p>
+Jos tehtäviin on tullut päivityksiä ne lataantuvat komennolla tmc update. Mikäli kaikki tehtävät ovat ajantasalla, komento ilmoittaa vain "All exercises are up-to-date".
+</p>
+
 <% partial 'partials/material_heading' do %>
   Ensimmäisen viikon tehtävät
 <% end %>
