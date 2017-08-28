@@ -1,0 +1,363 @@
+---
+  title: Viikko 1
+  exercise_page: true
+  quiz_page: false
+---
+
+<% partial 'partials/material_heading' do %>
+  Ennen kuin aloitat...
+<% end %>
+
+<% partial 'partials/material_sub_heading' do %>
+  Python versio
+<% end %>
+
+<p>
+Tämän kurssin tehtävät ovat tehty ja tarkastetaan TMC-serverillä Python3:lla. Helpoin tapa tarkistaa onko koneellasi Python3 on kirjoittaa komento python3 komentoriville.
+</p>
+
+<% partial 'partials/code_highlight' do %>
+~$ python3
+Python 3.5.2 (default, Nov 17 2016, 17:05:23)
+[GCC 5.4.0 20160609] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>>
+<% end %>
+
+<p>
+Mikäli tietokoneellasi ei ole Python3:a voit ladata sen seuraavalla komennolla:
+</p>
+
+<% partial 'partials/code_highlight' do %>
+~$ sudo apt-get install python3
+<% end %>
+
+<% partial 'partials/material_sub_heading' do %>
+  Pythonin Numpy versio
+<% end %>
+
+<p>
+Kurssin tehtävissä käytetään Numpy:stä versiota 1.11.0. Sitä uudemmat versiot käyvät myös, mutta vanhemmista voi puuttua joitain ominaisuuksia. Tarkista että sinulla on vähintään versio 1.11.0
+</p>
+
+<% partial 'partials/code_highlight' do %>
+~$ python3
+Python 3.5.2 (default, Nov 17 2016, 17:05:23)
+[GCC 5.4.0 20160609] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import numpy
+>>> numpy.version.version
+'1.11.0'
+>>>
+<% end %>
+
+<% partial 'partials/material_sub_heading' do %>
+  Pythonin Scipy versio
+<% end %>
+
+<p>
+Kurssin tehtävissä käytetään Scipy:stä versiota 0.17.0. Sitä uudemmat versiot käyvät myös, mutta vanhemmista voi puuttua joitain ominaisuuksia. Tarkista että sinulla on vähintään versio 0.17.0
+</p>
+
+<% partial 'partials/code_highlight' do %>
+~$ python3
+Python 3.5.2 (default, Nov 17 2016, 17:05:23)
+[GCC 5.4.0 20160609] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import scipy
+>>> scipy.version.version
+'0.17.0'
+>>>
+<% end %>
+
+<% partial 'partials/material_sub_heading' do %>
+  TMC-CLI
+<% end %>
+
+<p>
+Kurssilla hyödynnetään TMC (TestMyCode) alustaa ja se tarkistaa automaattisesti järjestelmään palautetun tehtävän sekä antaa siitä pisteet. Tarvitset kuitenkin itsellesi TMC-CLI:n. Seuraa tämän <a href="https://github.com/testmycode/tmc-cli"target="_blank">linkin</a> ohjeita.
+</p>
+
+<p>
+Kun saat TMC-CLI:n asennettua tarkista sen toiminta.
+</p>
+
+<% partial 'partials/code_highlight' do %>
+~$ tmc
+Usage: tmc [args] COMMAND [command-args]
+
+TMC commands:
+config    Set/unset TMC-CLI properties
+courses   List the available courses
+download  Download exercises for a specific course
+exercises List the exercises for a specific course
+help      List every command
+info      Show info about the current directory
+login     Login to TMC server
+logout    Logout from TMC server
+paste     Submit exercise to pastebin
+submit    Submit exercises
+test      Run local exercise tests
+update    Update exercises
+ 
+Options:
+  -d,--no-update     Disable temporarily the auto-update
+  -h,--help          Display help information
+     --help-admin    Display admin help information
+     --help-all      Display all help information of tmc-cli
+  -u,--force-update  Force the auto-update
+  -v,--version       Give the version of the tmc-cli
+
+Copyright(C) 2016 TestMyCode
+Some rights reserved.
+<% end %>
+
+<% partial 'partials/material_sub_heading' do %>
+  TMC-CLI:n käyttäminen
+<% end %>
+
+<p>
+Kurssin tehtävien lataaminen tapahtuu TMC-CLI:n kautta. Aloita luomalla itsellesi kansio mihin tallennat kaikki kurssin tehtävät.
+</p>
+
+<% partial 'partials/code_highlight' do %>
+~$ mkdir TiLaI2017
+~$ cd TiLaI2017
+~/TiLaI2017$
+<% end %>
+
+<p>
+Seuraavaksi tarvitset TMC-tunnuksen. Jos sinulla ei sellaista jo ole, luo se täällä XXX. Kun olet luonut tunnuksen voit kirjautua sisään komentorivillä komennolla.
+</p>
+
+<% partial 'partials/code_highlight' do %>
+~/TiLaI2017$ tmc login
+server address:
+<% end %>
+
+<p>
+Kirjoita osoitteeksi:
+</p>
+
+<p>
+Seuraavaksi clientti kysyy käyttäjänimeä ja salasanaa, jotka loit äsken.
+</p>
+
+<% partial 'partials/code_highlight' do %>
+username: tmctest
+password:
+<% end %>
+
+<p>
+Lopulta kometoriville tulee ilmoitus
+</p>
+
+<% partial 'partials/code_highlight' do %>
+Login successful.
+<% end %>
+
+<p>
+Saat kurssilistauksen esiin komennolla
+</p>
+
+<% partial 'partials/code_highlight' do %>
+~/TiLaI2017$ tmc courses
+fyl-fyl-tilaI
+<% end %>
+
+<p>
+Lataa TiLa I tehtävät koneellesi komennolla
+</p>
+
+<% partial 'partials/code_highlight' do %>
+~/TiLaI2017$ tmc download fyl-fyl-tilaI
+<% end %>
+
+<% partial 'partials/material_sub_heading' do %>
+  Tehtävien suorittaminen
+<% end %>
+
+<p>
+Kurssin tehtävien suorittaminen tapahtuu lataamiisi tehtäväpohjiin. Esimerkiksi tämän viikon ensimmäisen tehtävän suorittaminen tapahtuu siirtymällä kansioon viikko1-01_hello ja siellä kansioon src. Listaamalla tiedostot tässä kansiossa huomaat:
+</p>
+
+<% partial 'partials/code_highlight' do %>
+~/TiLaI2017/fyl-fyl-tilaI/viikko1-01_hello/src$ ls
+__init__.py  main.py  __pycache__
+~/TiLaI2017/fyl-fyl-tilaI/viikko1-01_hello/src$ gedit main.py
+<% end %>
+
+<p>
+Tee tehtävä tiedostoon main.py vapaavalintaisella editorilla. Kun saat tehtävän tehtyä voit ajaa lokaalit testit siirtymällä takaisin viikko1-01_hello kansioon ja kirjoittamalla komennon
+</p>
+
+<% partial 'partials/code_highlight' do %>
+~/TiLaI2017/fyl-fyl-tilaI/viikko1-01_hello/src$ cd ..
+~/TiLaI2017/fyl-fyl-tilaI/viikko1-01_hello$ python3 -m tmc
+Running tests with some TMC magic...
+..
+----------------------------------------------------------------------
+Ran 2 tests in 0.000s
+
+OK
+<% end %>
+
+<p>
+Kun lokaalit testit menevät läpi voit palauttaa tehtävän TMC-serverille, missä testit ajetaan uudelleen läpi ja sinulle merkitään tehtävästä suoritus. HUOM muista aina palauttaa tehtävä serverille, sillä muuten et saa tehtävistä pisteitä ts. lokaalin testin ajaminen ei riitä suoritukseen!
+</p>
+<% partial 'partials/code_highlight' do %>
+~/TiLaI2017/fyl-fyl-tilaI/viikko1-01_hello$ tmc submit
+Submitting: viikko1-01_hello
+Test results: 2/2 tests passed
+All tests passed on server!
+Model solution:
+<% end %>
+
+<% partial 'partials/material_sub_heading' do %>
+  Tehtävien päivitysten tarkistaminen
+<% end %>
+
+<p>
+Tehtäviin voi tulla päivityksiä ja korjauksia kurssin aikana. Päivityksien tarkistaminen tapahtuu seuraavasti.
+</p>
+
+<% partial 'partials/code_highlight' do %>
+~/TiLaI2017/fyl-fyl-tilaI$ tmc update
+<% end %>
+
+<p>
+Jos tehtäviin on tullut päivityksiä ne lataantuvat komennolla tmc update. Mikäli kaikki tehtävät ovat ajantasalla, komento ilmoittaa vain "All exercises are up-to-date".
+</p>
+
+<% partial 'partials/material_heading' do %>
+  Ensimmäisen viikon tehtävät
+<% end %>
+
+<% partial 'partials/exercise', locals: { name: 'Hello' } do %>
+
+  <p>
+    Tee ohjelma, jonka tulostus on seuraava:
+  </p>
+
+  <% partial 'partials/sample_output' do %>
+Hei maailma!
+  <% end %>
+
+<% end %>
+
+<% partial 'partials/exercise', locals: { name: 'Square' } do %>
+
+  <p>
+    Tee ohjelma, jonka tulostus on seuraava:
+  </p>
+
+  <% partial 'partials/sample_output' do %>
+* * * * *
+* * * * *
+* * * * *
+* * * * *
+* * * * *
+  <% end %>
+
+<% end %>
+
+<p>
+For-loop rakenne on kätevä apuneuvo, kun tahdotaan käydä esimerkiksi listoja läpi tai jos halutaan toistaa jotain asiaa tietty määrä. Esimerkiksi edellinen tehtävä on paljon lyhyempi tehdä for-loopilla kuin kirjoittaa kaikki print-komennot itse.
+</p>
+
+<p>
+For-loopin rakenne on luennolta tuttu:
+<% partial 'partials/code_highlight' do %>
+  for val in sequence:
+	        Body of for
+  <% end %>
+
+Missä val on arvo ja sequence on läpi käytävä kohde.
+</p>
+
+<p>
+Esimerkiksi seuraava koodi tulostaa numerot 0-4
+<% partial 'partials/code_highlight' do %>
+  for i in range(5):
+        print(i)
+  <% end %>
+
+</p>
+
+<% partial 'partials/exercise', locals: { name: 'Lazy-Square' } do %>
+
+  <p>
+    Tee ohjelma, joka tulostaa jälleen 5x5 ruudukon tähtiä, mutta käytä tällä kertaa käyttäen for-looppia:
+  </p>
+
+  <% partial 'partials/sample_output' do %>
+* * * * *
+* * * * *
+* * * * *
+* * * * *
+* * * * *
+  <% end %>
+
+<% end %>
+
+<p>
+Pythonissa muuttujat esitetään yhtäsuuruusmerkin vasemmalla puolella ja oikealla puolella sille asetettava arvo. Muuttujan nimessä ei saa olla välilyöntejä, ja muuttujat kirjoitetaan pienillä kirjaimilla. Muuttujien nimet eivät myöskään saa alkaa numerolla.
+</p>
+
+<p>
+Luennolla käytiin läpi peruslaskutoimitukset.
+</p>
+
+
+<ul>
+  <li>
+    summa +
+  </li>
+  <li>
+    erotus -
+  </li>
+  <li>
+    kertolasku *
+  </li>
+  <li>
+    potenssi **
+  </li>
+  <li>
+    jakolasku /
+  </li>
+</ul>
+
+<% partial 'partials/exercise', locals: { name: 'Seconds in year' } do %>
+
+  <p>
+    Lataamassasi tehtävässä on ohjelmarunko joka laskee montako sekuntia vuodessa on. Käytä annettuja muuttujia ja laske sekunnit.
+  </p>
+
+  <% partial 'partials/sample_output' do %>
+    sekunnit = 60
+    minuutit = 60
+    tunnit = 24
+    paivat = 365
+
+    vuodessaSekunteja = sekunnit*minuutit*tunnit*paivat
+    print(vuodessaSekunteja)
+  <% end %>
+
+<% end %>
+
+<% partial 'partials/exercise', locals: { name: 'Sum and Cosine' } do %>
+
+  <p>
+    Tee ohjelma, missä määrität muuttujat a ja b sekä niiden summan c. <br>
+    Anna a:n arvoksi 1 ja b:n arvoksi 2.<br>
+    Tulosta sen jälkeen summa c sekä Cos(c)
+  </p>
+
+  <% partial 'partials/sample_output' do %>
+3
+-0.9899924966
+  <% end %>
+
+<% end %>
+
+

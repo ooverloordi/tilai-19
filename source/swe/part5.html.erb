@@ -1,0 +1,164 @@
+---
+  title: Osa 5
+  exercise_page: true
+  quiz_page: false
+---
+<% partial 'partials/material_heading' do %>
+  Viidennen viikon tehtävät
+<% end %>
+<p>
+Varsinkin laboratoriotöissä haluamme usein sovittaa dataan suoran tai käyrän, sekä tietää sen yhtälön. Pythonin avulla tämä käy nopeasti hyödyntämällä pienimmän neliösumman menetelmää. Wikipedia kertoo asiasta näin: "Pienimmän neliösumman menetelmässä regressiokertoimien estimaattorit määrätään minimoimalla jäännös- eli virhetermien neliösumma. Saaduilla estimaateilla voidaan siten muodostaa estimoitu regressiosuora, eli malli kuvaamaan selitettävän muuttujan vaihtelua. "
+</p>
+
+<p>
+Pythonin leastsq-funktiota joka käyttää PNS-menetelmää kutsutaan seuraavasti:
+</p>
+
+<% partial  'partials/code_highlight' do %>
+  def residuals(param, xdata, ydata):
+    return ydata - (param[0] + param[1]*xdata)
+  def main():
+    x0 = np.array([0,0])
+    tu = leastsq(residuals, x0, args=(xdata, ydata))
+<% end %>
+
+<p>
+Leastsq vaatii siis residuals funktion (joka laskee virhetermit), alkuarvauksen sekä argumenteiksi dataa. Nyt saamme sovitetun funktion seuraavalla tavalla:
+</p>
+
+<% partial  'partials/code_highlight' do %>
+  def residuals(param, xdata, ydata):
+    return ydata - (param[0] + param[1]*xdata)
+  def main():
+    x0 = np.array([0,0])
+    tu = leastsq(residuals, x0, args=(xdata, ydata))
+    yfit = tu[0] #Saadut parametrit
+    fitFunc = yfit[0] + yfit[1]*xdata
+<% end %>
+
+<p>
+fitFuncin voimme plotata hyödyntämällä pyplottia.
+</p>
+
+<% partial 'partials/exercise', locals: { name: 'Resistance' } do %>
+
+  <p>
+  Tehtäväpohja on seuraavanlainen:
+  </p>
+
+  <% partial 'partials/code_highlight' do %>
+  def func(param, xdata, ydata):
+    return ydata - (param[0] + param[1]*xdata)
+  def main():
+
+  <% end %>
+
+  <p>
+  Tehtävänäsi on käyttää SciPyn Least square funktiota ja tehdä laboratoriosta saatuun dataan suoran sovitus. Data löytyy tiedostosta input.dat. Datassa ensimmäinen sarake on virta ja toinen sarake on jännite. Ratkaiset siis resistanssia. Muista tulostaa saamasi kulmakerroin, jotta tarkistus menee läpi!
+  </p>
+
+  <% partial 'partials/sample_output' do %>
+R = 0.56
+  <% end %>
+
+<% end %>
+
+<% partial 'partials/exercise', locals: { name: 'Least Squares' } do %>
+
+  <p>
+  Tehtäväpohja on seuraavanlainen:
+  </p>
+
+  <% partial 'partials/code_highlight' do %>
+  def main():
+    #Generate random data
+    xdata = np.linspace(0,4,50)
+    y_noise = 0.2 * np.random.normal(size=xdata.size)
+    ydata = 3*xdata + y_noise
+  <% end %>
+
+  <p>
+  Tehtävänäsi on käyttää SciPyn Least square funktiota ja tehdä suoran sovitus generoituun dataan. Suora tulee olla muotoa ax + b. Muista tulostaa saamasi parametrit, jotta tarkistus menee läpi!
+  </p>
+
+  <% partial 'partials/sample_output' do %>
+[-0.04193429  3.00553665]
+  <% end %>
+
+<% end %>
+
+<% partial 'partials/exercise', locals: { name: 'Least Squares Nonlinear' } do %>
+
+  <p>
+  Tehtäväpohja on seuraavanlainen:
+  </p>
+
+  <% partial 'partials/code_highlight' do %>
+  def main():
+    #Generate random data
+    xdata = np.linspace(-3,7,75)
+    y_noise = 0.5 * np.random.normal(size=xdata.size)
+    ydata = xdata**2 + y_noise
+  <% end %>
+
+  <p>
+  Tehtävänäsi on käyttää SciPyn Least square funktiota ja tehdä muotoa ax^2 + b oleva sovitus generoituun dataan. Muista tulostaa saamasi parametrit, jotta tarkistus menee läpi!
+  </p>
+
+  <% partial 'partials/sample_output' do %>
+[-0.02469396  0.99438934]
+  <% end %>
+
+<% end %>
+
+
+
+<% partial 'partials/exercise', locals: { name: 'Least Squares Sine and Cosine' } do %>
+
+  <p>
+  Tehtäväpohja on seuraavanlainen:
+  </p>
+
+  <% partial 'partials/code_highlight' do %>
+  def main():
+    #Generate random data
+    xdata = np.linspace(0,2*np.pi,100)
+    y_noise = 0.2 * np.random.normal(size=xdata.size)
+    ydata = np.sin(xdata) + np.cos(xdata) + y_noise
+  <% end %>
+
+  <p>
+  Tehtävänäsi on käyttää SciPyn Least square funktiota ja tehdä muotoa Asin(x) + Bcos(x) oleva sovitus generoituun dataan. Muista tulostaa saamasi parametrit, jotta tarkistus menee läpi!
+  </p>
+
+  <% partial 'partials/sample_output' do %>
+[ 1.00423816  0.99764248]
+  <% end %>
+
+<% end %>
+
+
+<% partial 'partials/exercise', locals: { name: 'Curve Fit' } do %>
+
+  <p>
+  Tehtäväpohja on seuraavanlainen:
+  </p>
+
+  <% partial 'partials/code_highlight' do %>
+  def main():
+    #Generoidaan random dataa
+    xdata = np.linspace(0,4,50)
+    y = func(xdata, 2, 3, 1)
+    y_noise = 0.2 * np.random.normal(size=xdata.size)
+    ydata = y + y_noise
+  <% end %>
+
+  <p>
+  Tehtävänäsi on käyttää SciPyn Curve fit funktiota ja tehdä sovitus generoituun dataan. Muista tulostaa saamasi parametrit, jotta tarkistus menee läpi!
+  </p>
+
+  <% partial 'partials/sample_output' do %>
+[ 1.7763289   3.02012127  1.06947269]
+  <% end %>
+
+<% end %>
