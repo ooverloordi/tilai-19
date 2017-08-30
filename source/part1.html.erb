@@ -140,7 +140,7 @@ Kirjoita osoitteeksi:
 </p>
 
 <p>
-Seuraavaksi clientti kysyy käyttäjänimeä ja salasanaa, jotka loit äsken.
+Seuraavaksi client kysyy käyttäjänimeä ja salasanaa, jotka loit äsken.
 </p>
 
 <% partial 'partials/code_highlight' do %>
@@ -149,7 +149,7 @@ password:
 <% end %>
 
 <p>
-Lopulta kometoriville tulee ilmoitus
+Lopulta komentoriville tulee ilmoitus
 </p>
 
 <% partial 'partials/code_highlight' do %>
@@ -188,7 +188,7 @@ __init__.py  main.py  __pycache__
 <% end %>
 
 <p>
-Tee tehtävä tiedostoon main.py vapaavalintaisella editorilla. Kun saat tehtävän tehtyä voit ajaa lokaalit testit siirtymällä takaisin viikko1-01_hello kansioon ja kirjoittamalla komennon
+Tee tehtävä tiedostoon main.py vapaavalintaisella editorilla. Kun saat tehtävän tehtyä voit ajaa paikalliset testit siirtymällä takaisin viikko1-01_hello kansioon ja kirjoittamalla komennon
 </p>
 
 <% partial 'partials/code_highlight' do %>
@@ -203,7 +203,7 @@ OK
 <% end %>
 
 <p>
-Kun lokaalit testit menevät läpi voit palauttaa tehtävän TMC-serverille, missä testit ajetaan uudelleen läpi ja sinulle merkitään tehtävästä suoritus. HUOM muista aina palauttaa tehtävä serverille, sillä muuten et saa tehtävistä pisteitä ts. lokaalin testin ajaminen ei riitä suoritukseen!
+Kun paikalliset testit menevät läpi voit palauttaa tehtävän TMC-serverille, missä testit ajetaan uudelleen ja sinulle merkitään tehtävästä suoritus. HUOM! Muista aina palauttaa tehtävä serverille, sillä muuten et saa tehtävistä pisteitä ts. paikallisen testin ajaminen ei riitä suoritukseen!
 </p>
 <% partial 'partials/code_highlight' do %>
 ~/TiLaI2017/fyl-fyl-tilaI/viikko1-01_hello$ tmc submit
@@ -226,7 +226,7 @@ Tehtäviin voi tulla päivityksiä ja korjauksia kurssin aikana. Päivityksien t
 <% end %>
 
 <p>
-Jos tehtäviin on tullut päivityksiä ne lataantuvat komennolla tmc update. Mikäli kaikki tehtävät ovat ajantasalla, komento ilmoittaa vain "All exercises are up-to-date".
+Jos tehtäviin on tullut päivityksiä ne lataantuvat komennolla tmc update. Mikäli kaikki tehtävät ovat ajantasalla, komento tuottaa vain ilmoituksen "All exercises are up-to-date".
 </p>
 
 <% partial 'partials/material_heading' do %>
@@ -262,7 +262,7 @@ Hei maailma!
 <% end %>
 
 <p>
-For-loop rakenne on kätevä apuneuvo, kun tahdotaan käydä esimerkiksi listoja läpi tai jos halutaan toistaa jotain asiaa tietty määrä. Esimerkiksi edellinen tehtävä on paljon lyhyempi tehdä for-loopilla kuin kirjoittaa kaikki print-komennot itse.
+For-loop rakenne on kätevä apuneuvo, kun tahdotaan käydä esimerkiksi listoja läpi tai jos halutaan toistaa jotain asiaa tietty määrä. Esimerkiksi tehtävä 2 on tehtävissä lyhyemmin for-loopilla kuin kirjoittamalla kaikki print-komennot itse.
 </p>
 
 <p>
@@ -272,7 +272,7 @@ For-loopin rakenne on luennolta tuttu:
 	        Body of for
   <% end %>
 
-Missä val on arvo ja sequence on läpi käytävä kohde.
+Ylläolevassa val on arvo ja sequence on läpi käytävä kohde.
 </p>
 
 <p>
@@ -301,7 +301,7 @@ Esimerkiksi seuraava koodi tulostaa numerot 0-4
 <% end %>
 
 <p>
-Pythonissa muuttujat esitetään yhtäsuuruusmerkin vasemmalla puolella ja oikealla puolella sille asetettava arvo. Muuttujan nimessä ei saa olla välilyöntejä, ja muuttujat kirjoitetaan pienillä kirjaimilla. Muuttujien nimet eivät myöskään saa alkaa numerolla.
+Pythonissa muuttujat esitellään yhtäsuuruusmerkin vasemmalla puolella, ja niiden arvo asetetaan merkin oikealla puolella. Muuttujan nimessä ei saa olla välilyöntejä, ja muuttujat kirjoitetaan pienillä kirjaimilla. Muuttujien nimet eivät saa alkaa numerolla.
 </p>
 
 <p>
@@ -345,12 +345,12 @@ Luennolla käytiin läpi peruslaskutoimitukset.
 
 <% end %>
 
-<% partial 'partials/exercise', locals: { name: 'Sum and Cosine' } do %>
+<% partial 'partials/exercise', locals: { name: 'Sum and cosine' } do %>
 
   <p>
     Tee ohjelma, missä määrität muuttujat a ja b sekä niiden summan c. <br>
     Anna a:n arvoksi 1 ja b:n arvoksi 2.<br>
-    Tulosta sen jälkeen summa c sekä Cos(c)
+    Tulosta sen jälkeen c:n sekä cos(c):n arvot.
   </p>
 
   <% partial 'partials/sample_output' do %>
