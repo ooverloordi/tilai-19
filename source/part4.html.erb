@@ -169,7 +169,35 @@ Nyt olemme alustaneet output.dat tiedoston ja määrittäneet että siihen talle
 Tämä koodi kirjoittaa kuvitellun muuttujan x listan kokonaisuudessaan output.dat tiedostoon, siten että luvut ovat allekkain.
   </p>
 
-<% partial 'partials/exercise', locals: { name: 'Data handling' } do %>
+
+  <% partial 'partials/exercise', locals: { name: 'Find' } do %>
+
+        <p>
+        Tehtäväpohja on seuraavanlainen:
+        </p>
+
+        <% partial 'partials/code_highlight' do %>
+        def main():
+              lista=[]
+        #Tee tehtävä tähän
+
+        ###################################
+        print(lista)
+
+        <% end %>
+
+        <p>
+        Tehtävän mukana tulee tiedosto model.dat. Tehtävänäsi löytää datasta tietty rivi ja siirtää se annettuun lista muuttujaan. Tiedät että haluttu data on kerätty 25 päivä, joten haluat saada siirrettyä rivin missä D-sarakkeessa esiintyy 25. Tehtävä on oikein kun tulostat seuraavan.
+        </p>
+
+        <% partial 'partials/sample_output' do %>
+['2454399.48 2007 10 25 23 35']
+        <% end %>
+
+      <% end %>
+
+
+  <% partial 'partials/exercise', locals: { name: 'Data handling' } do %>
 
   <p>
   Tehtäväpohjassa tulee mukana input.dat tiedosto. Tehtävänäsi on lukea input.dat tiedosto ja luoda output.dat tiedosto joka on valmiiksi LaTeX-taulukko muotoa. Output.dat tiedostossa pitää olla yhdellä rivillä 8 lukua ja rivejä pitäisi olla 25. Tehtävä on oikein kun output.dat tiedosto näyttää seuraavalta:
