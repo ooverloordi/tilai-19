@@ -133,10 +133,10 @@ NumPy sisältää myös kätevän tiedoston luku ominaisuuden.
 
 <% partial 'partials/code_highlight' do %>
   def main():
-     file = open('input.dat', 'r')
+     infile = 'input.dat'
 
-     x = np.loadtxt(file, usecols=(0,))
-     y = np.loadtxt(file, usecols=(1,))
+     x = np.loadtxt(infile, usecols=(0,))
+     y = np.loadtxt(infile, usecols=(1,))
   <% end %>
 
 <p>
