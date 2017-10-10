@@ -188,8 +188,19 @@ __init__.py  main.py  __pycache__
 <% end %>
 
 <p>
-Tee tehtävä tiedostoon main.py vapaavalintaisella editorilla. Kun saat tehtävän tehtyä voit ajaa paikalliset testit siirtymällä takaisin viikko1-01_hello kansioon ja kirjoittamalla komennon
-</p>
+Tee tehtävä tiedostoon main.py vapaavalintaisella editorilla. Voit kokeilla kirjoittamaasi koodia suorittamalla main.py tiedoston.</p>
+<% partial 'partials/code_highlight' do %>
+  ~/TiLaI2017/fyl-fyl-tilaI/viikko1-01_hello/src$ python3 main.py
+<% end %>
+
+<p>Vaihtoehtoisesti voit suorittaa main.py tiedoston seuraavasti:</p>
+
+<% partial 'partials/code_highlight' do %>
+  ~/TiLaI2017/fyl-fyl-tilaI/viikko1-01_hello$ python3 src/main.py
+<% end %>
+
+
+<p>Kun saat tehtävän tehtyä voit ajaa paikalliset testit siirtymällä takaisin viikko1-01_hello kansioon ja kirjoittamalla komennon</p>
 
 <% partial 'partials/code_highlight' do %>
 ~/TiLaI2017/fyl-fyl-tilaI/viikko1-01_hello/src$ cd ..
