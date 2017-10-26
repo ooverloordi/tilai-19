@@ -136,7 +136,7 @@ server address:
 <% end %>
 
 <p>
-Kirjoita osoitteeksi:
+Kirjoita osoitteeksi: https://tmc.mooc.fi/org/fyl
 </p>
 
 <p>
@@ -162,7 +162,12 @@ Saat kurssilistauksen esiin komennolla
 
 <% partial 'partials/code_highlight' do %>
 ~/TiLaI2017$ tmc courses
-fyl-fyl-tilaI
+Server https://tmc.mooc.fi/org/fyl
+fyl-tilaI
+
+Found 1 courses from the server.
+
+....
 <% end %>
 
 <p>
@@ -170,7 +175,7 @@ Lataa TiLa I tehtävät koneellesi komennolla
 </p>
 
 <% partial 'partials/code_highlight' do %>
-~/TiLaI2017$ tmc download fyl-fyl-tilaI
+~/TiLaI2017$ tmc download fyl-tilaI
 <% end %>
 
 <% partial 'partials/material_sub_heading' do %>
