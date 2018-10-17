@@ -9,6 +9,7 @@ require 'json'
 page '/*.xml', layout: false
 page '/*.json', layout: false
 page '/*.txt', layout: false
+page '/*.js', layout: false
 page '/paste.html', layout: false
 
 
@@ -24,6 +25,8 @@ page '/paste.html', layout: false
 activate :directory_indexes
 
 activate :asset_hash
+activate :relative_assets
+set :relative_links, true
 
 activate :external_pipeline,
   name: :webpack,
@@ -36,6 +39,8 @@ configure :development do
   activate :livereload
 end
 
+::Rack::Mime::MIME_TYPES['.pdf'] = 'application/pdf'
+
 ###
 # Helpers
 ###
@@ -47,6 +52,22 @@ helpers do
     options[:onclick] = "ga('send', 'event', 'navigation_topic_link', 'click', '#{url}')"
     link_to(body, url, options)
   end
+
+  def _common_prepending_spaces_count(input)
+    non_empty_lines = input.lines.reject { |line| line.strip == '' }
+    prepending_spaces = non_empty_lines.map { |line| line.match(/^ +/).to_s.length }
+    prepending_spaces.min
+  end
+
+  def fix_pre(input)
+    pre_count = _common_prepending_spaces_count(input)
+    fixed = input.lines.map do |line|
+      line.strip == '' ? line : line[(0 + pre_count)..-1]
+    end
+    fixed[0] = nil if fixed[0].strip == ''
+    fixed[-1] = nil if fixed[-1].strip == ''
+    fixed.join('')
+  end
 end
 
 # Build-specific configuration
@@ -56,4 +77,9 @@ configure :build do
 
   # Minify Javascript on build
   # activate :minify_javascript
+  ready do
+    sitemap.resources.select { |resource| resource.data.title && resource.data.published == false }.each do |resource|
+      ignore resource.path
+    end
+  end
 end
