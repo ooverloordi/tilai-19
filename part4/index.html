@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Tieteellinen Laskenta I 2017 | Viikko 4</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+
+    <link href="/stylesheets/styles-240f0664.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/styles/xcode.min.css">
+
+    <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.1/cookieconsent.min.css" />
+
+      <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'XX-XXXXXXX-X', 'auto');
+  ga('send', 'pageview');
+</script>
+
+  </head>
+  <body>
+    <div class="main-wrapper">
+      <div class="header-wrapper">
+        <div class="browser-support-warning" id="browser-support-warning" style="display: none;">
+  Kaikki tämän materiaalin osat eivät välttämättä tuo nykyistä selaintasi. Voisitko harkita vaihtamista <a href="https://www.google.com/chrome/browser/desktop/" target="_blank">Chrome</a> tai <a href="https://www.mozilla.org/en-US/firefox/new/" target="_blank">Firefox</a> selaimeen?
+  <span class="browser-support-warning__close">Selvä!</span>
+</div>
+
+
+        <nav class="navbar navbar-light bg-white">
+
+
+  <ul class="nav navbar-nav hidden-md-down">
+    <li class="nav-item ">
+  <a href="/" class="nav-link" onclick="ga('send', 'event', 'navigation_topic_link', 'click', 'index.html')">Johdanto</a>
+</li>
+
+    <li class="nav-item ">
+  <a href="/part1/" class="nav-link" onclick="ga('send', 'event', 'navigation_topic_link', 'click', 'part1.html')">Viikko 1</a>
+</li>
+
+    <li class="nav-item ">
+  <a href="/part2/" class="nav-link" onclick="ga('send', 'event', 'navigation_topic_link', 'click', 'part2.html')">Viikko 2</a>
+</li>
+
+    <li class="nav-item ">
+  <a href="/part3/" class="nav-link" onclick="ga('send', 'event', 'navigation_topic_link', 'click', 'part3.html')">Viikko 3</a>
+</li>
+
+    <li class="nav-item active">
+  <a href="/part4/" class="nav-link" onclick="ga('send', 'event', 'navigation_topic_link', 'click', 'part4.html')">Viikko 4</a>
+</li>
+
+    <li class="nav-item ">
+  <a href="/part5/" class="nav-link" onclick="ga('send', 'event', 'navigation_topic_link', 'click', 'part5.html')">Viikko 5</a>
+</li>
+
+    <li class="nav-item ">
+  <a href="/part6/" class="nav-link" onclick="ga('send', 'event', 'navigation_topic_link', 'click', 'part6.html')">Viikko 6</a>
+</li>
+
+  </ul>
+
+  <div class="float-xs-right navbar__buttons">
+    <div class="dropdown" id="mobile-nav-dropdown">
+      <button class="btn btn-secondary dropdown-toggle navbar__mobile-nav-toggle" data-toggle="dropdown">
+        <i class="fa fa-bars"></i>
+      </button>
+
+      <div class="dropdown-menu">
+      </div>
+    </div>
+
+
+    <button class="btn btn-secondary" id="table-of-contents-toggle">
+      <span class="hidden-md-down">Sisällysluettelo</span>
+      <i class="fa fa-ellipsis-h hidden-lg-up"></i>
+    </button>
+
+    <button class="btn btn-primary" id="tmc-login-toggle">Kirjaudu sisään</button>
+  </div>
+</nav>
+
+      </div>
+
+      <div class="content-wrapper">
+        <div class="container material" id="material">
+            <div class="exercise-list">
+  <div class="exercise-list__header">
+    Tehtävät
+  </div>
+
+  <div class="exercise-list__content" id="exercise-list"></div>
+
+</div>
+
+
+          <h1 class="material-heading">
+    Neljännen viikon tehtävät
+
+</h1>
+
+
+<div class="exercise">
+  <div class="exercise__header">
+    <a data-toggle="collapse" class="exercise__toggle">
+      <i class="fa fa-pencil exercise__icon"></i>
+      <h1 class="exercise__heading">More functions</h1>
+
+      <i class="fa fa-caret-down exercise__arrow"></i>
+    </a>
+  </div>
+
+  <div class="collapse">
+    <div class="exercise__body">
+      
+  <p>
+  Tehtäväpohja on seuraavanlainen:
+  </p>
+
+<pre class="sh_java code-highlight"><code>    def main():
+    t = np.arange(3) + 1             # Älä koske
+    ydot = np.arange(3) + 4             # Älä koske
+    f = 1.41                          # Älä koske
+    tau = aliohjelma1(t,f)            # Älä koske
+    z1,z2 = aliohjelma2(t,ydot,f,tau) # Älä koske
+    print(tau,z1,z2)                # Älä koske
+
+    #Kirjoita aliohjelma1 ja aliohjelma2 tähän
+</code></pre>
+
+  <p>
+  Tulet tarvitsemaan tämän tehtävän koodia myöhemmin tällä kurssilla, pidä se siis tallessa! Sinun tehtäväsi on luoda funktio joka laskee datan periodisuuden. Funktio laskee taun arvon ja palauttaa.
+  </p>
+<p>
+Tau lasketaan seuraavasti:
+</p>
+<img src="https://raw.githubusercontent.com/materiaalit/tilai-18/master/source/taulasku.gif" alt="Taun lauseke">
+  <p>
+  Saadaksesi arvot Z1 ja Z2 tarvitset taun arvoa.
+  </p>
+<p>
+Z1 lasketaan seuraavasti:
+</p>
+<img src="https://raw.githubusercontent.com/materiaalit/tilai-18/master/source/Z1lasku.gif" alt="Z1 lauseke">
+
+
+<p>
+Z2 lasketaan seuraavasti:
+</p>
+<img src="https://raw.githubusercontent.com/materiaalit/tilai-18/master/source/Z2lasku.gif" alt="Z2 lauseke">
+  <p>
+  Aloita tehtävä tekemällä aliohjelma1(t,f) joka laskee taun arvon. Luo seuraavaksi aliohjelma2(t, ydot, f, tau) joka laskee Z1 ja Z2 arvot. Tulosta lopuksi saadut arvot:
+  </p>
+
+
+
+
+<pre class="sample-output">0.0496453900709 1.14844141687 11.8561720281
+</pre>
+
+
+    </div>
+  </div>
+</div>
+
+<p>
+Python3 float-tyypillä on monia ominaisuuksia. Datan käsittelyssä tahdomme usein vähentää desimaaleja. Tutustu laajaan formatointiohjeeseen
+<a href="http://www.python-course.eu/python3_formatted_output.php"target="_blank">täällä.</a>
+</p>
+
+<div class="exercise">
+  <div class="exercise__header">
+    <a data-toggle="collapse" class="exercise__toggle">
+      <i class="fa fa-pencil exercise__icon"></i>
+      <h1 class="exercise__heading">Format</h1>
+
+      <i class="fa fa-caret-down exercise__arrow"></i>
+    </a>
+  </div>
+
+  <div class="collapse">
+    <div class="exercise__body">
+      
+  <p>
+  Seuraavaksi todella yksinkertainen harjoitus Pythonin float numeroiden formatista.
+  Tehtäväpohja on seuraavanlainen:
+  </p>
+
+<pre class="sh_java code-highlight"><code>  def main():
+    a = 2/3
+    b = np.pi
+    c = 11.123123123123
+</code></pre>
+
+  <p>
+  Tehtävä on oikein kun tulostat:
+  </p>
+
+<pre class="sample-output">0.67
+3.1416
+11.123
+0.67 3.1416 11.123
+</pre>
+
+
+    </div>
+  </div>
+</div>
+
+<p>
+Mittauksista ja muista tutkimuksista saadaan usein isoja, jopa tuhansien rivien datatiedostoja. Näiden käsittelyyn Python3 on tehokas työkalu.
+</p>
+
+<p>
+Datan käsittely tapahtuu Python3:ssa helpoiten file-komennolla. Ensin määritellään mitä tiedostoa käsitellään, kuinka sitä käsitellään ja miten käsittely jatkuu. Lopuksi tiedosto suljetaan, jottei se korruptoidu.
+</p>
+
+<pre class="sh_java code-highlight"><code>  def main():
+     file = open('input.dat', 'r')
+</code></pre>
+
+<p>
+Ylläoleva komento avaa tiedoston input.dat ja asettaa sen lukutilaan. Lukutilassa voimme kätevästi siirtää datatiedoston arvoja muuttujiin.
+</p>
+
+<pre class="sh_java code-highlight"><code>  def main():
+     file = open('input.dat', 'r')
+     tiedot = file.readlines()
+
+     x = []
+     y = []
+
+     for rivi in tiedot:
+        osarivi = rivi.split()
+        x.append(float(osarivi[0]))
+        y.append(float(osarivi[1]))
+</code></pre>
+
+<p>
+Ylläoleva koodi siis avaa input.dat tiedoston ja lukee siitä kaksi saraketta muuttujiin x ja y.
+</p>
+
+<p>
+NumPy sisältää myös kätevän tiedoston luku ominaisuuden.
+</p>
+
+<pre class="sh_java code-highlight"><code>  def main():
+     infile = 'input.dat'
+
+     x = np.loadtxt(infile, usecols=(0,))
+     y = np.loadtxt(infile, usecols=(1,))
+</code></pre>
+
+<p>
+Ylläolevalla komennolla käyttäjän ei tarvitse käydä dataa uudelleen for-loopilla läpi vaan se saadaan suoraan muuttujille.
+</p>
+
+<p>
+Vastaavasti tiedostoon kirjoittaminen toimii lähes samalla tavalla.
+</p>
+
+<pre class="sh_java code-highlight"><code>  def main():
+     file = open('output.dat', 'w')
+</code></pre>
+
+<p>
+Nyt olemme alustaneet output.dat tiedoston ja määrittäneet että siihen tallennetaan tietoa. Seuraava vaihe riippuu täysin siitä mitä tiedostoon halutaan laittaa, mutta esimerkiksi lukujen kirjoitus tapahtuisi seuraavasti:
+</p>
+
+<pre class="sh_java code-highlight"><code>     file = open('output.dat', 'w')
+     i = 0
+     while (i < len(x)):
+        file.write("%6.2f\n"%(x[i]))
+        i++
+    file.close()
+</code></pre>
+
+  <p>
+Tämä koodi kirjoittaa kuvitellun muuttujan x listan kokonaisuudessaan output.dat tiedostoon, siten että luvut ovat allekkain.
+  </p>
+
+
+<div class="exercise">
+  <div class="exercise__header">
+    <a data-toggle="collapse" class="exercise__toggle">
+      <i class="fa fa-pencil exercise__icon"></i>
+      <h1 class="exercise__heading">Find</h1>
+
+      <i class="fa fa-caret-down exercise__arrow"></i>
+    </a>
+  </div>
+
+  <div class="collapse">
+    <div class="exercise__body">
+      
+        <p>
+        Tehtäväpohja on seuraavanlainen:
+        </p>
+
+<pre class="sh_java code-highlight"><code>        def main():
+              lista=[]
+        #Tee tehtävä tähän
+
+        ###################################
+        print(lista)
+
+</code></pre>
+
+        <p>
+        Tehtävän mukana tulee tiedosto model.dat. Tehtävänäsi löytää datasta rivi, missä on D-sarakkeessa luku 25 (25. päivä) ja siirtää se annettuun lista muuttujaan. Tehtävä on oikein kun listassa on seuraava rivi:
+        </p>
+
+<pre class="sample-output">['2454399.48 2007 10 25 23 35']
+</pre>
+
+
+    </div>
+  </div>
+</div>
+
+
+<div class="exercise">
+  <div class="exercise__header">
+    <a data-toggle="collapse" class="exercise__toggle">
+      <i class="fa fa-pencil exercise__icon"></i>
+      <h1 class="exercise__heading">Data handling</h1>
+
+      <i class="fa fa-caret-down exercise__arrow"></i>
+    </a>
+  </div>
+
+  <div class="collapse">
+    <div class="exercise__body">
+      
+  <p>
+  Tehtäväpohjassa tulee mukana input.dat tiedosto. Tehtävänäsi on lukea input.dat tiedosto ja luoda output.dat tiedosto joka on valmiiksi LaTeX-taulukko muotoa. Output.dat tiedostossa pitää olla yhdellä rivillä 8 lukua ja rivejä pitäisi olla 25. Tehtävä on oikein kun output.dat tiedosto näyttää seuraavalta:
+  </p>
+
+<pre class="sample-output">  0.01  &  7.73  &  1.20  &  7.69  &  2.05  &  7.72  &  3.13  &  7.69  \\
+  4.16  &  7.69  &  5.03  &  7.70  &  5.14  &  7.71  &  5.17  &  7.73  \\
+  ...
+</pre>
+
+
+    </div>
+  </div>
+</div>
+
+
+<div class="exercise">
+  <div class="exercise__header">
+    <a data-toggle="collapse" class="exercise__toggle">
+      <i class="fa fa-pencil exercise__icon"></i>
+      <h1 class="exercise__heading">More data</h1>
+
+      <i class="fa fa-caret-down exercise__arrow"></i>
+    </a>
+  </div>
+
+  <div class="collapse">
+    <div class="exercise__body">
+      
+  <p>
+  Tehtäväpohjassa tulee mukana input.dat tiedosto. Tehtävänäsi on lukea input.dat tiedosto missä on 528 riviä ja luoda output.dat tiedosto joka on valmiiksi LaTeX-taulukko muotoa. Output.dat tiedostossa on 50 riviä. Ensimmäisesä sarakkeessa ovat 50 ensimmäistä ajanhetken arvoa t kahden desimaalin tarkkuudella. Toisessa sarakkeessa on taas seuraavat 50 arvoa jne. Viimeisessä 11. sarakkeessa on 28 arvoa, sillä data loppuu kesken. Tehtävä on oikein kun output.dat tiedosto näyttää seuraavalta:
+  </p>
+
+  <p>
+  Kolme ensimmäistä riviä
+  </p>
+<pre class="sample-output">
+
+1.08 &  31.26 &  65.09 &  97.47 & 128.28 & 156.09 & 190.26 & 239.08 & 274.36 & 314.07 & 346.38 \\
+1.24 &  31.43 &  65.27 &  98.09 & 128.47 & 156.27 & 190.43 & 239.23 & 277.07 & 314.22 & 347.38 \\
+1.40 &  32.09 &  65.46 &  98.28 & 132.09 & 156.46 & 191.09 & 239.38 & 277.22 & 314.36 & 348.08 \\
+</pre>
+  <p>
+  Kolme viimeistä riviä
+  </p>
+
+<pre class="sample-output">
+
+29.25 &  62.09 &  94.47 & 127.28 & 154.09 & 188.26 & 238.08 & 272.36 & 308.07 & 345.38 &  \\
+29.43 &  62.27 &  97.09 & 127.47 & 154.28 & 188.43 & 238.23 & 274.07 & 308.22 & 346.08 &  \\
+31.09 &  62.45 &  97.28 & 128.09 & 154.46 & 190.09 & 238.38 & 274.22 & 308.36 & 346.23 &  \\
+</pre>
+
+
+
+    </div>
+  </div>
+</div>
+
+        </div>
+      </div>
+
+      <div class="footer-wrapper">
+        <footer class="footer">
+Tämä materiaali on lisensoitu Creative Commons BY-NC-SA-lisenssillä
+    <a href="https://github.com/materiaalit/tilai-18" class="footer__github-link" target="_blank">
+      <i class="fa fa-github"></i>
+    </a>
+</footer>
+
+      </div>
+    </div>
+
+    <div class="modal fade" id="tmc-login-modal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <form id="tmc-login-form">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title">Kirjaudu TMC-käyttäjällesi</h4>
+        </div>
+        <div class="modal-body">
+          <div class="alert alert-info">
+            Puuttuuko sinulta TMC-käyttäjätunnus? <a href="https://tmc.mooc.fi/user/new" class="alert-link" target="_blank">Rekisteröidy</a>
+          </div>
+
+          <div class="alert alert-danger" id="tmc-login-error" style="display: none;"></div>
+
+          <div class="form-group">
+            <label>Käyttäjätunnus</label>
+            <input type="text" id="tmc-login-username" class="form-control" placeholder="Käyttäjätunnus"/>
+          </div>
+
+          <div class="form-group">
+            <label>Salasana</label>
+            <input type="password" id="tmc-login-password" class="form-control" placeholder="Salasana"/>
+          </div>
+
+          <div class="form-group">
+            <label>Kurssi</label>
+
+            <div class="form-check">
+              <label class="form-check-label">
+                <input type="radio" class="form-check-input" name="tmcLoginCourse" value="fyl-tilaI">
+                fyl-tilaI (Tieteellinen Laskenta I 2017)
+              </label>
+            </div>
+
+
+            <small class="form-text text-muted">
+              Kurssin valinnalla on pieniä vaikutuksia materiaalin tiettyihin osiin.
+            </small>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <a class="btn btn-secondary" data-dismiss="modal">Sulje</a>
+          <button type="submit" class="btn btn-primary">Kirjaudu sisään</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+    <div class="table-of-contents-layer" id="table-of-contents-layer">
+</div>
+
+<div class="table-of-contents" id="table-of-contents">
+  <h1 class="table-of-contents__heading">
+    Sisällysluettelo
+  </h1>
+
+  <div class="table-of-contents__content">
+    <ul id="table-of-contents-list"></ul>
+  </div>
+</div>
+
+
+    <script>
+  window._QUIZNATOR_ENABLED = true;
+</script>
+
+<script src="https://quiznator.herokuapp.com/javascripts/plugin-loader.min.js"></script>
+
+
+    <script>
+  window._STUDENT_DASHBOARD_ENABLED = true;
+</script>
+<script src="https://student-dashboard.testmycode.io/plugin-loader/script.js"></script>
+
+
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"
+	    integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+	    crossorigin="anonymous"></script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <script>
+      window.SD_SHOW_SURVEY = ['part6', 'part7'].indexOf(window.location.pathname.replace(/\//g,'')) >= 0;
+    </script>
+
+    <script src="/javascripts/scripts-79907d29.js"></script>
+
+    <script src="https://use.fontawesome.com/ed2f73836b.js"></script>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/highlight.min.js"></script>
+
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.1/cookieconsent.min.js"></script>
+    <script src='//cdnjs.cloudflare.com/ajax/libs/diff_match_patch/20121119/diff_match_patch.js'></script>
+
+    <script>window.cookieconsent.initialise({"palette":{"popup":{"background":"#000"},"button":{"background":"#f1d600"}}});</script>
+  </body>
+</html>

@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Tieteellinen Laskenta I 2017 | Viikko 3</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+
+    <link href="/stylesheets/styles-240f0664.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/styles/xcode.min.css">
+
+    <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.1/cookieconsent.min.css" />
+
+      <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'XX-XXXXXXX-X', 'auto');
+  ga('send', 'pageview');
+</script>
+
+  </head>
+  <body>
+    <div class="main-wrapper">
+      <div class="header-wrapper">
+        <div class="browser-support-warning" id="browser-support-warning" style="display: none;">
+  Kaikki tämän materiaalin osat eivät välttämättä tuo nykyistä selaintasi. Voisitko harkita vaihtamista <a href="https://www.google.com/chrome/browser/desktop/" target="_blank">Chrome</a> tai <a href="https://www.mozilla.org/en-US/firefox/new/" target="_blank">Firefox</a> selaimeen?
+  <span class="browser-support-warning__close">Selvä!</span>
+</div>
+
+
+        <nav class="navbar navbar-light bg-white">
+
+
+  <ul class="nav navbar-nav hidden-md-down">
+    <li class="nav-item ">
+  <a href="/en/" class="nav-link" onclick="ga('send', 'event', 'navigation_topic_link', 'click', 'index.html')">Johdanto</a>
+</li>
+
+    <li class="nav-item ">
+  <a href="/en/part1/" class="nav-link" onclick="ga('send', 'event', 'navigation_topic_link', 'click', 'part1.html')">Viikko 1</a>
+</li>
+
+    <li class="nav-item ">
+  <a href="/en/part2/" class="nav-link" onclick="ga('send', 'event', 'navigation_topic_link', 'click', 'part2.html')">Viikko 2</a>
+</li>
+
+    <li class="nav-item active">
+  <a href="/en/part3/" class="nav-link" onclick="ga('send', 'event', 'navigation_topic_link', 'click', 'part3.html')">Viikko 3</a>
+</li>
+
+    <li class="nav-item ">
+  <a href="/en/part4/" class="nav-link" onclick="ga('send', 'event', 'navigation_topic_link', 'click', 'part4.html')">Viikko 4</a>
+</li>
+
+    <li class="nav-item ">
+  <a href="/en/part5/" class="nav-link" onclick="ga('send', 'event', 'navigation_topic_link', 'click', 'part5.html')">Viikko 5</a>
+</li>
+
+    <li class="nav-item ">
+  <a href="/en/part6/" class="nav-link" onclick="ga('send', 'event', 'navigation_topic_link', 'click', 'part6.html')">Viikko 6</a>
+</li>
+
+  </ul>
+
+  <div class="float-xs-right navbar__buttons">
+    <div class="dropdown" id="mobile-nav-dropdown">
+      <button class="btn btn-secondary dropdown-toggle navbar__mobile-nav-toggle" data-toggle="dropdown">
+        <i class="fa fa-bars"></i>
+      </button>
+
+      <div class="dropdown-menu">
+      </div>
+    </div>
+
+
+    <button class="btn btn-secondary" id="table-of-contents-toggle">
+      <span class="hidden-md-down">Sisällysluettelo</span>
+      <i class="fa fa-ellipsis-h hidden-lg-up"></i>
+    </button>
+
+    <button class="btn btn-primary" id="tmc-login-toggle">Kirjaudu sisään</button>
+  </div>
+</nav>
+
+      </div>
+
+      <div class="content-wrapper">
+        <div class="container material" id="material">
+            <div class="exercise-list">
+  <div class="exercise-list__header">
+    Tehtävät
+  </div>
+
+  <div class="exercise-list__content" id="exercise-list"></div>
+
+</div>
+
+
+          <h1 class="material-heading">
+    Kolmannen viikon tehtävät
+
+</h1>
+
+<p>
+    Pythonissa jakojäännöksen selvittäminen onnistuu helpoiten modulo-operaattorilla. Modulo-operaattoria merkitään Pythonissa %-merkillä. Modulo-operaattori palauttaa suoraan jakojäännöksen.
+  </p>
+
+  <p>
+Esimerkiksi 6%2 palauttaa 0.
+  </p>
+  <p>
+Esimerkiksi 7%2 palauttaa 1.
+  </p>
+
+<div class="exercise">
+  <div class="exercise__header">
+    <a data-toggle="collapse" class="exercise__toggle">
+      <i class="fa fa-pencil exercise__icon"></i>
+      <h1 class="exercise__heading">Odd or even?</h1>
+
+      <i class="fa fa-caret-down exercise__arrow"></i>
+    </a>
+  </div>
+
+  <div class="collapse">
+    <div class="exercise__body">
+      
+  <p>
+    Tee ohjelma, missä kysyt käyttäjältä luvun. <br>
+    Tämän jälkeen ohjelma tulostaa oliko luku parillinen vai pariton.
+  </p>
+
+<pre class="sample-output">Give a number to check 333
+Number 333 is odd.
+</pre>
+
+<pre class="sample-output">Give a number to check 222
+Number 222 is even.
+</pre>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+<p>
+Pythonissa on for-loopin lisäksi käytössä myös mm. while-loop. While loop toimii periaatteessa samalla tavalla kuin for, mutta se jatkaa toistoa niin kauan kuin sille määritelty ehto on totta. Puhutaan ns. "Condition-Controlled" ja "Collection-Controlled" loopeista.
+</p>
+
+<p>
+Kokeillaa esimerkiksi seuraavaa koodia:
+</p>
+
+<pre class="sh_java code-highlight"><code>n = 100
+s = 0
+luku = 1
+
+while luku <= n:
+    s = s + luku
+    luku += 1
+
+print("Summa välillä 1 - %d on %d" % (n,s))
+</code></pre>
+
+<p>
+Ylläoleva ohjelma tulostaa seuraavan:
+</p>
+
+
+<pre class="sample-output">Summa välillä 1 - 100 on 5050
+</pre>
+
+<p>
+Ohjelmointitehtävissä törmää myös usein ongelmiin missä muuttujan on täytettävä tietty ehto jotta jotain tapahtuu. Näitä kutsutaan if-lauseiksi. Python3:ssa if-lauseiden runko on seuraava:
+</p>
+
+<pre class="sh_java code-highlight"><code>    if condition :
+      indentedStatementBlock
+</code></pre>
+
+<p>
+Lisäksi usein if-lauseita "jatketaan" else rakenteella, joka toimii samalla tavalla.
+</p>
+
+<pre class="sh_java code-highlight"><code>
+    if condition :
+      indentedStatementBlockForTrueCondition
+    else:
+      indentedStatementBlockForFalseCondition
+
+</code></pre>
+<p>
+Luennolla käydään läpi vertailuoperaattorit:
+</p>
+
+<ul>
+  <li>
+    yhtäsuuri ==
+  </li>
+  <li>
+    pienempi <
+  </li>
+  <li>
+    suurempi >
+  </li>
+  <li>
+    suurempi tai yhtäsuuri >=
+  </li>
+  <li>
+    pienempi tai yhtäsuuri <=
+  </li>
+  <li>
+    erisuuri !=
+  </li>
+</ul>
+<div class="exercise">
+  <div class="exercise__header">
+    <a data-toggle="collapse" class="exercise__toggle">
+      <i class="fa fa-pencil exercise__icon"></i>
+      <h1 class="exercise__heading">Looping</h1>
+
+      <i class="fa fa-caret-down exercise__arrow"></i>
+    </a>
+  </div>
+
+  <div class="collapse">
+    <div class="exercise__body">
+      
+<p>
+Tehtäväpohja näyttää seuraavalta
+</p>
+<pre class="sh_java code-highlight"><code>  def main():
+####################################################
+    arvattava = 42
+    arvaukset = 0
+    arvaus = 0
+####################################################
+#############TEE TEHTÄVÄ TÄMÄN ALAPUOLELLE##########
+</code></pre>
+
+<p>
+Tehtävänäsi on tehdä ohjelma joka lukee käyttäjältä arvauksen ja kertoo onko käyttäjän arvaama luku suurempi vai pienempi kuin arvattava luku. Lisäksi ohjelma laskee käyttäjän arvauksien määrän.
+</p>
+
+<pre class="sample-output">Arvaa luku 40
+Lukuni on suurempi
+Arvaa luku 44
+Lukuni on pienempi
+Arvaa luku 42
+Arvasit oikein  2  arvauksella
+</pre>
+
+    </div>
+  </div>
+</div>
+
+
+<div class="exercise">
+  <div class="exercise__header">
+    <a data-toggle="collapse" class="exercise__toggle">
+      <i class="fa fa-pencil exercise__icon"></i>
+      <h1 class="exercise__heading">Random angle</h1>
+
+      <i class="fa fa-caret-down exercise__arrow"></i>
+    </a>
+  </div>
+
+  <div class="collapse">
+    <div class="exercise__body">
+      
+  <p>
+    Tehtäväpohjassa on valmiiksi koodi joka arpoo ensin radiaaneja ja muuntaa sen tämän jälkeen kulmaksi. Kulmaluku voi siis olla yli yhden kierroksen. Tehtävänäsi on kirjoittaa valmiiksi annetun osuuden jälkeen koodi joka kertoo mihin yksikköympyrän neljännekseen arvottu kulma sijoittuu.
+  </p>
+
+<pre class="sample-output">  Arvottu luku  0.33797175599533125
+  on alueen (0,1) keskella
+  Arvottu kulma = 337.97175599533125  astetta
+  on 4. neljanneksessa
+</pre>
+
+<pre class="sample-output">  Arvottu luku  0.09602578231894476
+  on alueen (0,1) alussa
+  Arvottu kulma = 96.02578231894476  astetta
+  on 2. neljanneksessa
+</pre>
+
+
+    </div>
+  </div>
+</div>
+
+
+<p>
+Vaikka Pythonissa on lukuisia kirjastoja, mitkä tarjoavat valmiita ratkaisuja ongelmiin, silti välillä joudutaan tekemään omia funktioita. Monissa tieteellisen laskennan ongelmissa joudutaan tekemään omia funktioita. Myöhemmin tällä kurssilla teemme esimerkiksi Rayleigh-testin datalle.
+</p>
+
+<p>
+Pythonin funktiorakenne on yksinkertainen:
+</p>
+
+<pre class="sh_java code-highlight"><code>def funktion_nimi(parametrit):
+    funktionRakenneTänne
+</code></pre>
+
+<p>
+Esimerkiksi funktio joka muuttaa Celsius-asteet Fahrenheiteiksi on seuraavanlainen:
+</p>
+
+
+<pre class="sh_java code-highlight"><code>def fahrenheit(TCelsius):
+    return (TCelsius * 9/5) + 32
+</code></pre>
+
+<p>
+Mainissa fahrenheit-funktiota kutsuttaisiin esimerkiksi seuraavasti:
+</p>
+
+<pre class="sh_java code-highlight"><code>def main():
+    print(fahrenheit(12))
+def fahrenheit(TCelsius):
+    return (TCelsius * 9/5) + 32
+</code></pre>
+
+<p>
+Huomaa että tehtäväpohjissa nähty main on siis oikeasti myös funktio joka sisältää pääohjelman!
+</p>
+  <p>
+Funktion rakenne voi sisältää lähes mitä vain. Esimerkiksi for, while ja if-rakenteita.
+</p>
+
+<div class="exercise">
+  <div class="exercise__header">
+    <a data-toggle="collapse" class="exercise__toggle">
+      <i class="fa fa-pencil exercise__icon"></i>
+      <h1 class="exercise__heading">Factorial</h1>
+
+      <i class="fa fa-caret-down exercise__arrow"></i>
+    </a>
+  </div>
+
+  <div class="collapse">
+    <div class="exercise__body">
+      
+  <p>
+    Main ohjelmarungossa on valmiiksi print(factorial(12)). Tehtäväsi on kirjoittaa factorial(n) funktio mikä laskee annetun luvun n kertoman ja palauttaa sen. Tulosta lopuksi mainissa oleva factorial(12).
+  </p>
+
+<pre class="sample-output">  479001600
+</pre>
+
+
+    </div>
+  </div>
+</div>
+
+
+<div class="exercise">
+  <div class="exercise__header">
+    <a data-toggle="collapse" class="exercise__toggle">
+      <i class="fa fa-pencil exercise__icon"></i>
+      <h1 class="exercise__heading">Exponential function</h1>
+
+      <i class="fa fa-caret-down exercise__arrow"></i>
+    </a>
+  </div>
+
+  <div class="collapse">
+    <div class="exercise__body">
+      
+  <p>
+    Main ohjelmarungossa on valmiiksi print(exponential(1,100)). Tehtävänäsi on kirjoittaa funktio joka laskee e<sup>x</sup> funktion Taylorin sarjan arvon pisteessä x, n:n termin tarkkuudella. Mainissa oleva funktio kutsu siis tarkoittaa e<sup>1</sup> arvoa 100 termin tarkkuudella. Vinkki: käytä edellisessä tehtävässä luomaasi kertoma funktiota. Voit kutsua toista funktiota toisen sisällä aivan kuin kutsut sitä mainissakin.
+  </p>
+
+<pre class="sample-output">  2.7182818284590455
+</pre>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+        </div>
+      </div>
+
+      <div class="footer-wrapper">
+        <footer class="footer">
+Tämä materiaali on lisensoitu Creative Commons BY-NC-SA-lisenssillä
+    <a href="https://github.com/materiaalit/tilai-18" class="footer__github-link" target="_blank">
+      <i class="fa fa-github"></i>
+    </a>
+</footer>
+
+      </div>
+    </div>
+
+    <div class="modal fade" id="tmc-login-modal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <form id="tmc-login-form">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title">Kirjaudu TMC-käyttäjällesi</h4>
+        </div>
+        <div class="modal-body">
+          <div class="alert alert-info">
+            Puuttuuko sinulta TMC-käyttäjätunnus? <a href="https://tmc.mooc.fi/user/new" class="alert-link" target="_blank">Rekisteröidy</a>
+          </div>
+
+          <div class="alert alert-danger" id="tmc-login-error" style="display: none;"></div>
+
+          <div class="form-group">
+            <label>Käyttäjätunnus</label>
+            <input type="text" id="tmc-login-username" class="form-control" placeholder="Käyttäjätunnus"/>
+          </div>
+
+          <div class="form-group">
+            <label>Salasana</label>
+            <input type="password" id="tmc-login-password" class="form-control" placeholder="Salasana"/>
+          </div>
+
+          <div class="form-group">
+            <label>Kurssi</label>
+
+            <div class="form-check">
+              <label class="form-check-label">
+                <input type="radio" class="form-check-input" name="tmcLoginCourse" value="fyl-tilaI">
+                fyl-tilaI (Tieteellinen Laskenta I 2017)
+              </label>
+            </div>
+
+
+            <small class="form-text text-muted">
+              Kurssin valinnalla on pieniä vaikutuksia materiaalin tiettyihin osiin.
+            </small>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <a class="btn btn-secondary" data-dismiss="modal">Sulje</a>
+          <button type="submit" class="btn btn-primary">Kirjaudu sisään</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+    <div class="table-of-contents-layer" id="table-of-contents-layer">
+</div>
+
+<div class="table-of-contents" id="table-of-contents">
+  <h1 class="table-of-contents__heading">
+    Sisällysluettelo
+  </h1>
+
+  <div class="table-of-contents__content">
+    <ul id="table-of-contents-list"></ul>
+  </div>
+</div>
+
+
+    <script>
+  window._QUIZNATOR_ENABLED = true;
+</script>
+
+<script src="https://quiznator.herokuapp.com/javascripts/plugin-loader.min.js"></script>
+
+
+    <script>
+  window._STUDENT_DASHBOARD_ENABLED = true;
+</script>
+<script src="https://student-dashboard.testmycode.io/plugin-loader/script.js"></script>
+
+
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"
+	    integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+	    crossorigin="anonymous"></script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <script>
+      window.SD_SHOW_SURVEY = ['part6', 'part7'].indexOf(window.location.pathname.replace(/\//g,'')) >= 0;
+    </script>
+
+    <script src="/javascripts/scripts-79907d29.js"></script>
+
+    <script src="https://use.fontawesome.com/ed2f73836b.js"></script>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/highlight.min.js"></script>
+
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.1/cookieconsent.min.js"></script>
+    <script src='//cdnjs.cloudflare.com/ajax/libs/diff_match_patch/20121119/diff_match_patch.js'></script>
+
+    <script>window.cookieconsent.initialise({"palette":{"popup":{"background":"#000"},"button":{"background":"#f1d600"}}});</script>
+  </body>
+</html>
