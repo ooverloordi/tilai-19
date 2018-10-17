@@ -8,7 +8,7 @@ branches:
   only:
   - master
 before_install:
-  - nvm install 7.4.0
+- nvm install 7.4.0
 install:
 - npm install
 - bundle install --jobs=3 --retry=3 --deployment --path=${BUNDLE_PATH:-vendor/bundle}
@@ -16,16 +16,13 @@ before_script:
 - git config --global user.name "hnbot"
 - git config --global user.email "nygrenh+hnbot@gmail.com"
 - export COMMIT_MESSAGE=Update:\ $(git log -1 --pretty=%s)
-- git clone https://github.com/2017-tilai/2017-tilai.github.io.git build
+- git clone -b gh-pages --single-branch https://github.com/materiaalit/tilai-18.git build
 script:
 - bundle exec middleman build
 after_success:
 - cd build
-- git checkout HEAD README.md .github
+- git checkout HEAD README.md
+- git checkout HEAD CNAME
 - git add --all
 - git commit -m "$COMMIT_MESSAGE"
-- git push "https://hnbot:$GITHUB_API_KEY@github.com/2017-tilai/2017-tilai.github.io.git"
-  master:master 2>&1 | sed "s/$GITHUB_API_KEY/<confidential>/g"
-env:
-  global:
-    secure: VJJv+x+80hB+aZOwLFlkojR9OthbslXmlC8LICZwK2L+D8ub918GHY6gua59b2nVp6p2b8W47EuDoz9qw5lJkoFPB70q6J9QKhe5IL532lETfwDgSAPFzN+Cukp3tbm1NJzzLcHeQ46oEiCFOMY7oG4bahy4kpTPGo9os8Xqjx0xnLsqUjbE+NPdsyy444WbWefvN2uYk0h3zT6fQSwvU5MBrA8u7jHI7B9Zm4qaxTgSvepLlnLb/yAk6CsWTA3uUlmIGn1kCNRf7O2XEip6P02bMAXxdJ9RAOYtSAQDPPthYUPdVjjDRv0TYT9FUMAXy4yCu50oEr04v6SVEj07b2ezOpwdbnepxsMia/rryjlZ8UiljwnNTfeaOIGY+LCaE9nsv/C6QWx3gbVyi4aQHwmLBlDtG8GyqakWNsW995DRqWi3Ah9QRRKTTDlvSZeiGhaJ+Dxr6qgMpNlalNC1Bkv3oUbybsiZod2Zb3mIMCQRsGwNyNRJPKjwCtex8hmqayESyAumxzuxz0AlfxrMQswtQm1XhhZg3nuX8ngL1nR7CNQwZbti35uCB5rqQ4FYkcefc/lHjyxGvfRuz6UmMXYJS001Gh9ifYT71LcnYxO3pcOJPXrlxlDpOaPqryWXznxTPMST7Ea1GAykug48cWTtwZpvgETspyuANGeSElw=
+- git push "https://hnbot:$GITHUB_API_KEY@github.com/materiaalit/tilai-18.git" gh-pages:gh-pages 2>&1 | sed "s/$GITHUB_API_KEY/<confidential>/g"
