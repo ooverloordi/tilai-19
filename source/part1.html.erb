@@ -75,11 +75,11 @@ Type "help", "copyright", "credits" or "license" for more information.
 <% end %>
 
 <p>
-Kurssilla hyödynnetään TMC (TestMyCode) alustaa ja se tarkistaa automaattisesti järjestelmään palautetun tehtävän sekä antaa siitä pisteet. Tarvitset kuitenkin itsellesi TMC-CLI:n. Seuraa tämän <a href="https://github.com/testmycode/tmc-cli"target="_blank">linkin</a> ohjeita.
+Kurssilla hyödynnetään TMC (TestMyCode) alustaa, joka tarkistaa automaattisesti järjestelmään palautetun tehtävän sekä antaa siitä pisteet. Tarvitset kuitenkin itsellesi TMC-CLI:n. Seuraa tämän <a href="https://github.com/testmycode/tmc-cli"target="_blank">linkin</a> ohjeita.
 </p>
 
 <p>
-Kun saat TMC-CLI:n asennettua tarkista sen toiminta.
+Kun saat TMC-CLI:n asennettua, tarkista sen toiminta.
 </p>
 
 <% partial 'partials/code_highlight' do %>
@@ -121,9 +121,9 @@ Kurssin tehtävien lataaminen tapahtuu TMC-CLI:n kautta. Aloita luomalla itselle
 </p>
 
 <% partial 'partials/code_highlight' do %>
-~$ mkdir TiLaI2017
-~$ cd TiLaI2017
-~/TiLaI2017$
+~$ mkdir TiLaI2018
+~$ cd TiLaI2018
+~/TiLaI2018$
 <% end %>
 
 <p>
@@ -131,7 +131,7 @@ Seuraavaksi tarvitset TMC-tunnuksen. Jos sinulla ei sellaista jo ole, luo se <a 
 </p>
 
 <% partial 'partials/code_highlight' do %>
-~/TiLaI2017$ tmc login
+~/TiLaI2018$ tmc login
 server address:
 <% end %>
 
@@ -161,9 +161,9 @@ Saat kurssilistauksen esiin komennolla
 </p>
 
 <% partial 'partials/code_highlight' do %>
-~/TiLaI2017$ tmc courses
+~/TiLaI2018$ tmc courses
 Server https://tmc.mooc.fi/org/fyl
-fyl-tilaI
+fyl-tila-i-2018
 
 Found 1 courses from the server.
 
@@ -175,7 +175,7 @@ Lataa TiLa I tehtävät koneellesi komennolla
 </p>
 
 <% partial 'partials/code_highlight' do %>
-~/TiLaI2017$ tmc download fyl-tilaI
+~/TiLaI2018$ tmc download fyl-tila-i-2018
 <% end %>
 
 <% partial 'partials/material_sub_heading' do %>
@@ -187,29 +187,29 @@ Kurssin tehtävien suorittaminen tapahtuu lataamiisi tehtäväpohjiin. Esimerkik
 </p>
 
 <% partial 'partials/code_highlight' do %>
-~/TiLaI2017/fyl-fyl-tilaI/viikko1-01_hello/src$ ls
+~/TiLaI2018/fyl-tila-i-2018/viikko1-01_hello/src$ ls
 __init__.py  main.py  __pycache__
-~/TiLaI2017/fyl-fyl-tilaI/viikko1-01_hello/src$ gedit main.py
+~/TiLaI2018/fyl-tila-i-2018/viikko1-01_hello/src$ gedit main.py
 <% end %>
 
 <p>
 Tee tehtävä tiedostoon main.py vapaavalintaisella editorilla. Voit kokeilla kirjoittamaasi koodia suorittamalla main.py tiedoston.</p>
 <% partial 'partials/code_highlight' do %>
-  ~/TiLaI2017/fyl-fyl-tilaI/viikko1-01_hello/src$ python3 main.py
+  ~/TiLaI2018/fyl-tila-i-2018/viikko1-01_hello/src$ python3 main.py
 <% end %>
 
 <p>Vaihtoehtoisesti voit suorittaa main.py tiedoston seuraavasti:</p>
 
 <% partial 'partials/code_highlight' do %>
-  ~/TiLaI2017/fyl-fyl-tilaI/viikko1-01_hello$ python3 src/main.py
+  ~/TiLaI2018/fyl-tila-i-2018/viikko1-01_hello$ python3 src/main.py
 <% end %>
 
 
 <p>Kun saat tehtävän tehtyä voit ajaa paikalliset testit siirtymällä takaisin viikko1-01_hello kansioon ja kirjoittamalla komennon</p>
 
 <% partial 'partials/code_highlight' do %>
-~/TiLaI2017/fyl-fyl-tilaI/viikko1-01_hello/src$ cd ..
-~/TiLaI2017/fyl-fyl-tilaI/viikko1-01_hello$ python3 -m tmc
+~/TiLaI2018/fyl-tila-i-2018/viikko1-01_hello/src$ cd ..
+~/TiLaI2018/fyl-tila-i-2018/viikko1-01_hello$ python3 -m tmc
 Running tests with some TMC magic...
 ..
 ----------------------------------------------------------------------
@@ -225,7 +225,7 @@ Paikalliset testit voi suorittaa myös komennolla tmc test tehtävä, eli esimer
 Kun paikalliset testit menevät läpi voit palauttaa tehtävän TMC-serverille, missä testit ajetaan uudelleen ja sinulle merkitään tehtävästä suoritus. HUOM! Muista aina palauttaa tehtävä serverille, sillä muuten et saa tehtävistä pisteitä ts. paikallisen testin ajaminen ei riitä suoritukseen!
 </p>
 <% partial 'partials/code_highlight' do %>
-~/TiLaI2017/fyl-fyl-tilaI/viikko1-01_hello$ tmc submit
+~/TiLaI2018/fyl-tila-i-2018/viikko1-01_hello$ tmc submit
 Submitting: viikko1-01_hello
 Test results: 2/2 tests passed
 All tests passed on server!
@@ -241,7 +241,7 @@ Tehtäviin voi tulla päivityksiä ja korjauksia kurssin aikana. Päivityksien t
 </p>
 
 <% partial 'partials/code_highlight' do %>
-~/TiLaI2017/fyl-fyl-tilaI$ tmc update
+~/TiLaI2018/fyl-tila-i-2018$ tmc update
 <% end %>
 
 <p>

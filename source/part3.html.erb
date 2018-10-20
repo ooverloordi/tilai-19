@@ -45,7 +45,7 @@ Pythonissa on for-loopin lisäksi käytössä myös mm. while-loop. While loop t
 </p>
 
 <p>
-Kokeillaa esimerkiksi seuraavaa koodia:
+Kokeillaan esimerkiksi seuraavaa koodia:
 </p>
 
 <% partial 'partials/code_highlight' do %>
@@ -70,7 +70,7 @@ Summa välillä 1 - 100 on 5050
 <% end %>
 
 <p>
-Ohjelmointitehtävissä törmää myös usein ongelmiin, joissa muuttujan on täytettävä tietty ehto jotta jotain tapahtuu. Näitä kutsutaan if-lauseiksi. Python3:ssa if-lauseiden runko on seuraava:
+Ohjelmointitehtävissä törmää myös usein ongelmiin, joissa muuttujan on täytettävä tietty ehto, jotta jotain tapahtuu. Näitä kutsutaan if-lauseiksi. Python3:ssa if-lauseiden runko on seuraava:
 </p>
 
 <% partial 'partials/code_highlight' do %>
@@ -168,7 +168,7 @@ Arvasit oikein 3 arvauksella
 
 
 <p>
-Vaikka Pythonissa on lukuisia kirjastoja, jotka tarjoavat valmiita ratkaisuja ongelmiin. Monissa tieteellisen laskennan ongelmissa joudutaan tekemään omia funktioita. Myöhemmin tällä kurssilla teemme esimerkiksi Rayleigh-testin datalle.
+Vaikka Pythonissa on lukuisia kirjastoja, jotka tarjoavat valmiita ratkaisuja ongelmiin, monissa tieteellisen laskennan ongelmissa joudutaan tekemään omia funktioita. Myöhemmin tällä kurssilla toteutamme esimerkiksi niin kutsutun Rayleigh-testin datalle.
 </p>
 
 <p>
@@ -202,16 +202,16 @@ def fahrenheit(TCelsius):
   <% end %>
 
 <p>
-Huomaa että tehtäväpohjissa nähty main on siis oikeasti myös funktio joka sisältää pääohjelman!
+Huomaa, että tehtäväpohjissa nähty main on siis oikeasti myös funktio, joka sisältää pääohjelman!
 </p>
   <p>
-Funktion rakenne voi sisältää lähes mitä vain. Esimerkiksi for, while ja if-rakenteita.
+Funktion rakenne voi sisältää lähes mitä vain. Esimerkiksi for-, while- ja if-rakenteita.
 </p>
 
 <% partial 'partials/exercise', locals: { name: 'Factorial' } do %>
 
   <p>
-    Main ohjelmarungossa on valmiiksi print(factorial(12)). Tehtäväsi on kirjoittaa factorial(n) funktio mikä laskee annetun luvun n kertoman ja palauttaa sen. Tulosta lopuksi mainissa oleva factorial(12).
+    Main-ohjelmarungossa on valmiiksi komento print(factorial(12)). Tehtäväsi on kirjoittaa factorial(n)-funktio, joka laskee annetun luvun n kertoman ja palauttaa sen. Tulosta lopuksi mainissa oleva factorial(12).
   </p>
 
   <% partial 'partials/sample_output' do %>
@@ -224,7 +224,7 @@ Funktion rakenne voi sisältää lähes mitä vain. Esimerkiksi for, while ja if
 <% partial 'partials/exercise', locals: { name: 'Exponential function' } do %>
 
   <p>
-    Main ohjelmarungossa on valmiiksi print(exponential(1,100)). Tehtävänäsi on kirjoittaa funktio joka laskee e<sup>x</sup> funktion Taylorin sarjan arvon pisteessä x, n:n termin tarkkuudella. Mainissa oleva funktio kutsu siis tarkoittaa e<sup>1</sup> arvoa 100 termin tarkkuudella. Vinkki: käytä edellisessä tehtävässä luomaasi kertoma funktiota. Voit kutsua toista funktiota toisen sisällä aivan kuin kutsut sitä mainissakin.
+    Main-ohjelmarungossa on valmiiksi komento print(exponential(1,100)). Tehtävänäsi on kirjoittaa funktio, joka laskee e<sup>x</sup>-funktion Taylorin sarjan arvon pisteessä x, n:n termin tarkkuudella. Mainissa oleva funktiokutsu siis tarkoittaa e<sup>1</sup> arvoa 100 termin tarkkuudella. Vinkki: käytä edellisessä tehtävässä luomaasi kertomafunktiota. Voit kutsua toista funktiota toisen sisällä aivan kuten kutsuisit sitä mainissakin.
   </p>
 
   <p>

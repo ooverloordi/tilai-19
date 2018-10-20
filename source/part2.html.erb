@@ -60,7 +60,7 @@ Tarvitsemme NumPyä käytännössä heti kun haluamme ratkaista muuta kuin perus
 
   <p>
     Käytä Numpy-modulia ja määritä kompleksiluvut a = (0 + i)<sup>2</sup>, b = 1 + i, c = 2 + 3i ja tulosta ne.<br>
-    Tulosta sen jälkeen d = b + c, d:n realiosa, d:n imaginääriosa, d:n komponenttien välinen kulma ja d:n konjugaatti.
+    Tulosta sen jälkeen d = b + c, d:n reaaliosa, imaginääriosa, argumentti ja kompleksikonjugaatti.
   </p>
 
   <% partial 'partials/sample_output' do %>
@@ -91,20 +91,20 @@ Tarvitsemme NumPyä käytännössä heti kun haluamme ratkaista muuta kuin perus
 <% end %>
 
 <p>
-Python sisältää itsessään syötteen käsittelyyn tarvittan input-funktion. Inputin käyttö tapahtuu seuraavasti:
+Python sisältää itsessään syötteen käsittelyyn tarvittavan input-funktion. Inputin käyttö tapahtuu seuraavasti:
 </p>
 <% partial 'partials/code_highlight' do %>
   nimi = input("Kerro nimesi ")
   <% end %>
 
 <p>
-Ylläoleva koodi tuottaa seuraavan:
+Ylläoleva koodi tuottaa seuraavan tulosteen:
 </p>
 <% partial 'partials/sample_output' do %>
 Kerro nimesi
   <% end %>
 <p>
-  Input on Pythonissa string-muotoista eli sitä ei voi suoraan käyttää esimerkiksi muuttujan arvojen antamiseksi.
+Syöte tallennetaan muuttujaan nimi. Pythonissa input tulkitsee syötteen olevan tyyppiä string, eli sitä käyttäen ei voida esimerkiksi suoraan tallentaa numeroarvoja muuttujiin.
 </p>
 <% partial 'partials/exercise', locals: { name: 'Greeter' } do %>
 
