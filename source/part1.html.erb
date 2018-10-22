@@ -349,17 +349,11 @@ Luennolla käytiin läpi peruslaskutoimitukset.
 <% partial 'partials/exercise', locals: { name: 'Seconds in year' } do %>
 
   <p>
-    Lataamassasi tehtävässä on ohjelmarunko joka laskee montako sekuntia vuodessa on. Käytä annettuja muuttujia ja laske sekunnit.
+    Laske, kuinka monta sekuntia on vuodessa käyttäen ohjelmarungossa määriteltyjä muuttujia, ja tulosta sekuntien määrä.
   </p>
 
   <% partial 'partials/sample_output' do %>
-    sekunnit = 60
-    minuutit = 60
-    tunnit = 24
-    paivat = 365
-
-    vuodessaSekunteja = sekunnit*minuutit*tunnit*paivat
-    print(vuodessaSekunteja)
+    31536000
   <% end %>
 
 <% end %>
