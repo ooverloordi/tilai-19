@@ -260,6 +260,16 @@ Jos tehtäviin on tullut päivityksiä ne lataantuvat komennolla tmc update. Mik
   Ensimmäisen viikon tehtävät
 <% end %>
 
+<p>
+Tehtäviä tehdessänne muistakaa, että ratkaisu kirjoitetaan main-funktioon. Koodi täytyy siis sisentää neljällä välilyönnillä, jotta Python osaa tulkita komennot osaksi tätä funktiota. Esimerkki sisennyksestä:
+
+<% partial 'partials/code_highlight' do %>
+def main():
+    a=1
+  <% end %>
+
+Esimerkin main-funktiossa siis yksinkertaisesti määritellään muuttujalle a arvo 1.
+
 <% partial 'partials/exercise', locals: { name: 'Hello' } do %>
 
   <p>
@@ -295,8 +305,8 @@ For-loop rakenne on kätevä apuneuvo, kun tahdotaan käydä esimerkiksi listoja
 <p>
 For-loopin rakenne on luennolta tuttu:
 <% partial 'partials/code_highlight' do %>
-  for val in sequence:
-	        Body of for
+for val in sequence:
+    Body of for
   <% end %>
 
 Ylläolevassa val on arvo ja sequence on läpi käytävä kohde.
@@ -305,8 +315,8 @@ Ylläolevassa val on arvo ja sequence on läpi käytävä kohde.
 <p>
 Esimerkiksi seuraava koodi tulostaa numerot 0-4
 <% partial 'partials/code_highlight' do %>
-  for i in range(5):
-        print(i)
+for i in range(5):
+    print(i)
   <% end %>
 
 </p>
