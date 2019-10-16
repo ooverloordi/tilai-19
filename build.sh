@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# AUTOMATED BUILD & COMMIT
+# AUTOMATED BUILD & COMMIT & PUSH
 #
 # Change to reflect your environment before use!
 # Best used with git username & password caching.
