@@ -23,4 +23,4 @@ Build and deploy into GitHub - remember to customize script for your environment
 
 
 
-Remember that this is only frontend for TMC-course and backend is at https://github.com/rage/fyl-tilaI
+Remember that this is only frontend for TMC-course and backend is at https://github.com/rage/fyl-tilaI (private repository for obvious reasons, ask permissions from Helsinki University RAGE research group)
