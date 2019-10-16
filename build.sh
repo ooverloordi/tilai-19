@@ -3,7 +3,7 @@
 # AUTOMATED BUILD & COMMIT
 #
 # Change to reflect your environment before use!
-# Best used with git user cache.
+# Best used with git username & password caching.
 #
 # Currently assumes main branch at ~/tilai-19 and gh-pages branch at ~/gh-pages/tilai-19/
 #
