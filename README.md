@@ -15,3 +15,8 @@ Build into directory "build":
 ```
 bundle exec middleman build
 ```
+
+Build and deploy into GitHub - remember to customize script for your environment!
+```
+./build.sh 
+```
