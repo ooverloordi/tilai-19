@@ -12,13 +12,6 @@ bundle exec middleman server
 ```
 
 Build into directory "build":
-...
+```
 bundle exec middleman build
-...
-
-Build and deploy
-...
-./build.sh
-...
-
-Note: Modify build.sh to match your environment
+```
