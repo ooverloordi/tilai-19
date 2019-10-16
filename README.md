@@ -20,3 +20,7 @@ Build and deploy into GitHub - remember to customize script for your environment
 ```
 ./build.sh 
 ```
+
+
+
+Remember that this is only frontend for TMC-course and backend is at https://github.com/rage/fyl-tilaI
