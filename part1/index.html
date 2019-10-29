@@ -262,7 +262,7 @@ Saat kurssilistauksen esiin komennolla
 
 <pre class="sh_java code-highlight"><code>~/TiLaI2019$ tmc courses
 Server https://tmc.mooc.fi/org/fyl
-fyl-tila-i-2019
+fyl-tila-i-19
 
 Found 1 courses from the server.
 
@@ -273,7 +273,7 @@ Found 1 courses from the server.
 Lataa TiLa I tehtävät koneellesi komennolla
 </p>
 
-<pre class="sh_java code-highlight"><code>~/TiLaI2019$ tmc download fyl-tila-i-2019
+<pre class="sh_java code-highlight"><code>~/TiLaI2019$ tmc download fyl-tila-i-19
 </code></pre>
 
 <h2 class="material-heading">
@@ -285,26 +285,26 @@ Lataa TiLa I tehtävät koneellesi komennolla
 Kurssin tehtävien suorittaminen tapahtuu lataamiisi tehtäväpohjiin. Esimerkiksi tämän viikon ensimmäisen tehtävän suorittaminen tapahtuu siirtymällä kansioon viikko1-01_hello ja siellä kansioon src. Listaamalla tiedostot tässä kansiossa huomaat:
 </p>
 
-<pre class="sh_java code-highlight"><code>~/TiLaI2019/fyl-tila-i-2019/viikko1-01_hello/src$ ls
+<pre class="sh_java code-highlight"><code>~/TiLaI2019/fyl-tila-i-19/viikko1-01_hello/src$ ls
 __init__.py  main.py  __pycache__
-~/TiLaI2019/fyl-tila-i-2019/viikko1-01_hello/src$ gedit main.py
+~/TiLaI2019/fyl-tila-i-19/viikko1-01_hello/src$ gedit main.py
 </code></pre>
 
 <p>
 Tee tehtävä tiedostoon main.py vapaavalintaisella editorilla. Voit kokeilla kirjoittamaasi koodia suorittamalla main.py tiedoston.</p>
-<pre class="sh_java code-highlight"><code>  ~/TiLaI2019/fyl-tila-i-2019/viikko1-01_hello/src$ python3 main.py
+<pre class="sh_java code-highlight"><code>  ~/TiLaI2019/fyl-tila-i-19/viikko1-01_hello/src$ python3 main.py
 </code></pre>
 
 <p>Vaihtoehtoisesti voit suorittaa main.py tiedoston seuraavasti:</p>
 
-<pre class="sh_java code-highlight"><code>  ~/TiLaI2019/fyl-tila-i-2019/viikko1-01_hello$ python3 src/main.py
+<pre class="sh_java code-highlight"><code>  ~/TiLaI2019/fyl-tila-i-19/viikko1-01_hello$ python3 src/main.py
 </code></pre>
 
 
 <p>Kun saat tehtävän tehtyä voit ajaa paikalliset testit siirtymällä takaisin viikko1-01_hello kansioon ja kirjoittamalla komennon</p>
 
-<pre class="sh_java code-highlight"><code>~/TiLaI2019/fyl-tila-i-2019/viikko1-01_hello/src$ cd ..
-~/TiLaI2019/fyl-tila-i-2019/viikko1-01_hello$ python3 -m tmc
+<pre class="sh_java code-highlight"><code>~/TiLaI2019/fyl-tila-i-19/viikko1-01_hello/src$ cd ..
+~/TiLaI2019/fyl-tila-i-19/viikko1-01_hello$ python3 -m tmc
 Running tests with some TMC magic...
 ..
 ----------------------------------------------------------------------
@@ -319,7 +319,7 @@ Paikalliset testit voi suorittaa myös komennolla tmc test tehtävä, eli esimer
 <p>
 Kun paikalliset testit menevät läpi voit palauttaa tehtävän TMC-serverille, missä testit ajetaan uudelleen ja sinulle merkitään tehtävästä suoritus. HUOM! Muista aina palauttaa tehtävä serverille, sillä muuten et saa tehtävistä pisteitä ts. paikallisen testin ajaminen ei riitä suoritukseen!
 </p>
-<pre class="sh_java code-highlight"><code>~/TiLaI2019/fyl-tila-i-2019/viikko1-01_hello$ tmc submit
+<pre class="sh_java code-highlight"><code>~/TiLaI2019/fyl-tila-i-19/viikko1-01_hello$ tmc submit
 Submitting: viikko1-01_hello
 Test results: 2/2 tests passed
 All tests passed on server!
@@ -335,7 +335,7 @@ Model solution:
 Tehtäviin voi tulla päivityksiä ja korjauksia kurssin aikana. Päivityksien tarkistaminen tapahtuu seuraavasti.
 </p>
 
-<pre class="sh_java code-highlight"><code>~/TiLaI2019/fyl-tila-i-2019$ tmc update
+<pre class="sh_java code-highlight"><code>~/TiLaI2019/fyl-tila-i-19$ tmc update
 </code></pre>
 
 <p>
