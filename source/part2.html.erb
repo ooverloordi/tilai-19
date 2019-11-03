@@ -203,19 +203,22 @@ Kokeillaan esimerkiksi seuraavaa koodia:
 </p>
 
 <% partial 'partials/code_highlight' do %>
-n = 100
-s = 0
+n = 5
 luku = 1
 
 while luku <= n:
-    s = s + luku
+    print("huutista")
     luku += 1
-
-print("Summa välillä 1 - %d on %d" % (n,s))
   <% end %>
 
 <p>
 Ylläoleva ohjelma tulostaa seuraavan:
+
+huutista
+huutista
+huutista
+huutista
+huutista
 </p>
 
 
