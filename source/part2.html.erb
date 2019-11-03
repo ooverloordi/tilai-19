@@ -162,5 +162,141 @@ Give second integer 9001
 0.03332963004110654
   <% end %>
 
+<p>
+    Pythonissa jakojäännöksen selvittäminen onnistuu helpoiten modulo-operaattorilla. Modulo-operaattoria merkitään Pythonissa %-merkillä. Modulo-operaattori palauttaa suoraan jakojäännöksen.
+  </p>
+
+  <p>
+Esimerkiksi 6%2 palauttaa 0.
+  </p>
+  <p>
+Esimerkiksi 7%2 palauttaa 1.
+  </p>
+
+<% partial 'partials/exercise', locals: { name: 'Odd or even?' } do %>
+
+  <p>
+    Tee ohjelma, missä kysyt käyttäjältä luvun. <br>
+    Tämän jälkeen ohjelma tulostaa oliko luku parillinen vai pariton.
+  </p>
+
+  <% partial 'partials/sample_output' do %>
+Give a number to check 333
+Number 333 is odd.
+  <% end %>
+
+  <% partial 'partials/sample_output' do %>
+Give a number to check 222
+Number 222 is even.
+  <% end %>
+
+<% end %>
+
+
+
+<p>
+Pythonissa on for-loopin lisäksi käytössä myös mm. while-loop. While loop toimii periaatteessa samalla tavalla kuin for, mutta se jatkaa toistoa niin kauan kuin sille määritelty ehto on totta. Puhutaan ns. "Condition-Controlled" ja "Collection-Controlled" loopeista.
+</p>
+
+<p>
+Kokeillaan esimerkiksi seuraavaa koodia:
+</p>
+
+<% partial 'partials/code_highlight' do %>
+n = 100
+s = 0
+luku = 1
+
+while luku <= n:
+    s = s + luku
+    luku += 1
+
+print("Summa välillä 1 - %d on %d" % (n,s))
+  <% end %>
+
+<p>
+Ylläoleva ohjelma tulostaa seuraavan:
+</p>
+
+
+<% partial 'partials/sample_output' do %>
+Summa välillä 1 - 100 on 5050
+<% end %>
+
+<p>
+Ohjelmointitehtävissä törmää myös usein ongelmiin, joissa muuttujan on täytettävä tietty ehto, jotta jotain tapahtuu. Näitä kutsutaan if-lauseiksi. Python3:ssa if-lauseiden runko on seuraava:
+</p>
+
+<% partial 'partials/code_highlight' do %>
+    if condition :
+      indentedStatementBlock
+  <% end %>
+
+<p>
+Lisäksi usein if-lauseita "jatketaan" else rakenteella, joka toimii samalla tavalla.
+</p>
+
+<% partial 'partials/code_highlight' do %>
+
+    if condition :
+      indentedStatementBlockForTrueCondition
+    else:
+      indentedStatementBlockForFalseCondition
+
+  <% end %>
+<p>
+Luennolla käydään läpi vertailuoperaattorit:
+</p>
+
+<ul>
+  <li>
+    yhtäsuuri ==
+  </li>
+  <li>
+    pienempi <
+  </li>
+  <li>
+    suurempi >
+  </li>
+  <li>
+    suurempi tai yhtäsuuri >=
+  </li>
+  <li>
+    pienempi tai yhtäsuuri <=
+  </li>
+  <li>
+    erisuuri !=
+  </li>
+</ul>
+<% partial 'partials/exercise', locals: { name: 'Looping' } do %>
+
+<p>
+Tehtäväpohja näyttää seuraavalta
+</p>
+  <% partial 'partials/code_highlight' do %>
+  def main():
+    ####################################################
+    arvattava = 42
+    arvaukset = 0
+    arvaus = 0
+    ####################################################
+    #############TEE TEHTÄVÄ TÄMÄN ALAPUOLELLE##########
+  <% end %>
+
+<p>
+Tehtävänäsi on tehdä ohjelma joka lukee käyttäjältä arvauksen ja kertoo onko käyttäjän arvaama luku suurempi vai pienempi kuin arvattava luku. Lisäksi ohjelma laskee käyttäjän arvauksien määrän.
+</p>
+
+<% partial 'partials/sample_output' do %>
+Arvaa luku 40
+Lukuni on suurempi
+Arvaa luku 44
+Lukuni on pienempi
+Arvaa luku 42
+Arvasit oikein 3 arvauksella
+<% end %>
+<% end %>
+
+
 <% end %>
 
