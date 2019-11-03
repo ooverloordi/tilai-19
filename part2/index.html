@@ -331,6 +331,162 @@ Give second integer 9001
 0.03332963004110654
 </pre>
 
+<p>
+    Pythonissa jakojäännöksen selvittäminen onnistuu helpoiten modulo-operaattorilla. Modulo-operaattoria merkitään Pythonissa %-merkillä. Modulo-operaattori palauttaa suoraan jakojäännöksen.
+  </p>
+
+  <p>
+Esimerkiksi 6%2 palauttaa 0.
+  </p>
+  <p>
+Esimerkiksi 7%2 palauttaa 1.
+  </p>
+
+<div class="exercise">
+  <div class="exercise__header">
+    <a data-toggle="collapse" class="exercise__toggle">
+      <i class="fa fa-pencil exercise__icon"></i>
+      <h1 class="exercise__heading">Odd or even?</h1>
+
+      <i class="fa fa-caret-down exercise__arrow"></i>
+    </a>
+  </div>
+
+  <div class="collapse">
+    <div class="exercise__body">
+      
+  <p>
+    Tee ohjelma, missä kysyt käyttäjältä luvun. <br>
+    Tämän jälkeen ohjelma tulostaa oliko luku parillinen vai pariton.
+  </p>
+
+<pre class="sample-output">Give a number to check 333
+Number 333 is odd.
+</pre>
+
+<pre class="sample-output">Give a number to check 222
+Number 222 is even.
+</pre>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+<p>
+Pythonissa on for-loopin lisäksi käytössä myös mm. while-loop. While loop toimii periaatteessa samalla tavalla kuin for, mutta se jatkaa toistoa niin kauan kuin sille määritelty ehto on totta. Puhutaan ns. "Condition-Controlled" ja "Collection-Controlled" loopeista.
+</p>
+
+<p>
+Kokeillaan esimerkiksi seuraavaa koodia:
+</p>
+
+<pre class="sh_java code-highlight"><code>n = 100
+s = 0
+luku = 1
+
+while luku <= n:
+    s = s + luku
+    luku += 1
+
+print("Summa välillä 1 - %d on %d" % (n,s))
+</code></pre>
+
+<p>
+Ylläoleva ohjelma tulostaa seuraavan:
+</p>
+
+
+<pre class="sample-output">Summa välillä 1 - 100 on 5050
+</pre>
+
+<p>
+Ohjelmointitehtävissä törmää myös usein ongelmiin, joissa muuttujan on täytettävä tietty ehto, jotta jotain tapahtuu. Näitä kutsutaan if-lauseiksi. Python3:ssa if-lauseiden runko on seuraava:
+</p>
+
+<pre class="sh_java code-highlight"><code>    if condition :
+      indentedStatementBlock
+</code></pre>
+
+<p>
+Lisäksi usein if-lauseita "jatketaan" else rakenteella, joka toimii samalla tavalla.
+</p>
+
+<pre class="sh_java code-highlight"><code>
+    if condition :
+      indentedStatementBlockForTrueCondition
+    else:
+      indentedStatementBlockForFalseCondition
+
+</code></pre>
+<p>
+Luennolla käydään läpi vertailuoperaattorit:
+</p>
+
+<ul>
+  <li>
+    yhtäsuuri ==
+  </li>
+  <li>
+    pienempi <
+  </li>
+  <li>
+    suurempi >
+  </li>
+  <li>
+    suurempi tai yhtäsuuri >=
+  </li>
+  <li>
+    pienempi tai yhtäsuuri <=
+  </li>
+  <li>
+    erisuuri !=
+  </li>
+</ul>
+<div class="exercise">
+  <div class="exercise__header">
+    <a data-toggle="collapse" class="exercise__toggle">
+      <i class="fa fa-pencil exercise__icon"></i>
+      <h1 class="exercise__heading">Looping</h1>
+
+      <i class="fa fa-caret-down exercise__arrow"></i>
+    </a>
+  </div>
+
+  <div class="collapse">
+    <div class="exercise__body">
+      
+<p>
+Tehtäväpohja näyttää seuraavalta
+</p>
+<pre class="sh_java code-highlight"><code>  def main():
+    ####################################################
+    arvattava = 42
+    arvaukset = 0
+    arvaus = 0
+    ####################################################
+    #############TEE TEHTÄVÄ TÄMÄN ALAPUOLELLE##########
+</code></pre>
+
+<p>
+Tehtävänäsi on tehdä ohjelma joka lukee käyttäjältä arvauksen ja kertoo onko käyttäjän arvaama luku suurempi vai pienempi kuin arvattava luku. Lisäksi ohjelma laskee käyttäjän arvauksien määrän.
+</p>
+
+<pre class="sample-output">Arvaa luku 40
+Lukuni on suurempi
+Arvaa luku 44
+Lukuni on pienempi
+Arvaa luku 42
+Arvasit oikein 3 arvauksella
+</pre>
+
+    </div>
+  </div>
+</div>
+
+
 
     </div>
   </div>
