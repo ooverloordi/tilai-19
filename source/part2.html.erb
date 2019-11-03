@@ -172,8 +172,8 @@ Esimerkiksi 6%2 palauttaa 0.
   <p>
 Esimerkiksi 7%2 palauttaa 1.
   </p>
-<% end %>
 
+<% end %>
 
 <% partial 'partials/exercise', locals: { name: 'Odd or even?' } do %>
 
@@ -298,5 +298,16 @@ Arvasit oikein 3 arvauksella
 <% end %>
 
 
+<% partial 'partials/exercise', locals: { name: 'Sum' } do %>
+
+<p>
+Tee ohjelma, joka kysyy käyttäjältä kokonaisluvun. Tämän jälkeen ohjelma laskee kaikkien kokonaislukujen summan ykkösestä tähän käyttäjän antamaan lukuun, ja tulostaa tämän summan.
+</p>
+
+<% partial 'partials/sample_output' do %>
+Anna kokonaisluku: 50
+Summa välillä 1 - 50 on 1275
 <% end %>
+<% end %>
+
 
