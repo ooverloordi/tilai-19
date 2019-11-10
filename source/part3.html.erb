@@ -238,4 +238,191 @@ Funktion rakenne voi sisältää lähes mitä vain. Esimerkiksi for-, while- ja 
 <% end %>
 
 
+<p>
+Python3:n float-tyypillä on monia ominaisuuksia. Datan käsittelyssä tahdomme usein vähentää desimaaleja. Tutustu laajaan formatointiohjeeseen
+<a href="http://www.python-course.eu/python3_formatted_output.php"target="_blank">täällä.</a>
+</p>
+
+<% partial 'partials/exercise', locals: { name: 'Format' } do %>
+
+  <p>
+  Seuraavaksi todella yksinkertainen harjoitus Pythonin float numeroiden formatista.
+  Tehtäväpohja on seuraavanlainen:
+  </p>
+
+  <% partial 'partials/code_highlight' do %>
+  def main():
+    a = 2/3
+    b = np.pi
+    c = 11.123123123123
+  <% end %>
+
+  <p>
+  Tehtävä on tehty oikein, kun tulostat:
+  </p>
+
+  <% partial 'partials/sample_output' do %>
+0.67
+3.1416
+11.123
+0.67 3.1416 11.123
+  <% end %>
+
+<% end %>
+
+<p>
+Mittauksista ja muista tutkimuksista saadaan usein isoja, jopa tuhansien rivien datatiedostoja. Näiden käsittelyyn Python3 on tehokas työkalu.
+</p>
+
+<p>
+Datan käsittely tapahtuu Python3:ssa helpoiten file-tyyppisillä muuttujilla. Ensin määritellään, mitä tiedostoa käsitellään, kuinka sitä käsitellään ja miten käsittely jatkuu. Lopuksi tiedosto suljetaan, jottei se korruptoidu.
+</p>
+
+<% partial 'partials/code_highlight' do %>
+  def main():
+     file = open('input.dat', 'r')
+  <% end %>
+
+<p>
+Ylläoleva komento avaa tiedoston input.dat ja asettaa sen lukutilaan. Lukutilassa voimme kätevästi siirtää datatiedoston arvoja muuttujiin.
+</p>
+
+<% partial 'partials/code_highlight' do %>
+  def main():
+     file = open('input.dat', 'r')
+     tiedot = file.readlines()
+
+     x = []
+     y = []
+
+     for rivi in tiedot:
+        osarivi = rivi.split()
+        x.append(float(osarivi[0]))
+        y.append(float(osarivi[1]))
+  <% end %>
+
+<p>
+Ylläoleva koodi siis avaa input.dat-tiedoston ja lukee siitä kaksi saraketta muuttujiin x ja y.
+</p>
+
+<p>
+NumPy sisältää myös kätevän tiedoston luku ominaisuuden.
+</p>
+
+<% partial 'partials/code_highlight' do %>
+  def main():
+     infile = 'input.dat'
+
+     x = np.loadtxt(infile, usecols=(0,))
+     y = np.loadtxt(infile, usecols=(1,))
+  <% end %>
+
+<p>
+Ylläolevalla komennolla käyttäjän ei tarvitse käydä dataa uudelleen for-loopilla läpi vaan se saadaan suoraan muuttujille.
+</p>
+
+<p>
+Vastaavasti tiedostoon kirjoittaminen toimii lähes samalla tavalla.
+</p>
+
+<% partial 'partials/code_highlight' do %>
+  def main():
+     file = open('output.dat', 'w')
+  <% end %>
+
+<p>
+Nyt olemme alustaneet output.dat-tiedoston ja määrittäneet että siihen tallennetaan tietoa. Seuraava vaihe riippuu täysin siitä mitä tiedostoon halutaan laittaa, mutta esimerkiksi lukujen kirjoitus tapahtuisi seuraavasti:
+</p>
+
+<% partial 'partials/code_highlight' do %>
+     file = open('output.dat', 'w')
+     i = 0
+     while (i < len(x)):
+        file.write("%6.2f\n"%(x[i]))
+        i++
+    file.close()
+  <% end %>
+
+  <p>
+Tämä koodi kirjoittaa kuvitellun muuttujan x listan kokonaisuudessaan output.dat-tiedostoon, siten että luvut ovat allekkain.
+  </p>
+
+
+  <% partial 'partials/exercise', locals: { name: 'Find' } do %>
+
+        <p>
+        Tehtäväpohja on seuraavanlainen:
+        </p>
+
+        <% partial 'partials/code_highlight' do %>
+        def main():
+              lista=[]
+        #Tee tehtävä tähän
+
+        ###################################
+        print(lista)
+
+        <% end %>
+
+        <p>
+        Tehtävän mukana tulee tiedosto model.dat. Tehtävänäsi löytää datasta rivi, missä on D-sarakkeessa luku 25 (25. päivä) ja siirtää se annettuun lista muuttujaan. Tehtävä on oikein, kun listassa on seuraava rivi:
+        </p>
+
+        <% partial 'partials/sample_output' do %>
+['2454399.48 2007 10 25 23 35']
+        <% end %>
+
+      <% end %>
+
+
+  <% partial 'partials/exercise', locals: { name: 'Data handling' } do %>
+
+  <p>
+  Tehtäväpohjassa tulee mukana input.dat-tiedosto. Tehtävänäsi on lukea input.dat-tiedosto ja luoda output.dat-tiedosto, joka on valmiiksi LaTeX-taulukko muotoa. Output.dat-tiedostossa pitää olla yhdellä rivillä 8 lukua ja rivejä pitäisi olla 25. Tehtävä on oikein, kun output.dat-tiedosto näyttää seuraavalta:
+  </p>
+
+  <% partial 'partials/sample_output' do %>
+  0.01  &  7.73  &  1.20  &  7.69  &  2.05  &  7.72  &  3.13  &  7.69  \\
+  4.16  &  7.69  &  5.03  &  7.70  &  5.14  &  7.71  &  5.17  &  7.73  \\
+  ...
+  <% end %>
+
+  <p>
+  Huomaa, että testien läpäisemiseksi rivien tulee olla tarkalleen esimerkin mukaisessa formaatissa (jokaiselle luvulle on varattu kahdeksan merkin tila, luvun jälkeen kaksi välilyöntiä ennen &-merkkiä).
+
+<% end %>
+
+
+<% partial 'partials/exercise', locals: { name: 'More data' } do %>
+
+  <p>
+  Tehtäväpohjassa tulee mukana input.dat-tiedosto. Tehtävänäsi on lukea tämä tiedosto, jossa on 528 riviä, ja luoda output.dat-tiedosto, joka on valmiiksi LaTeX-taulukon muodossa. Output.dat-tiedostossa on 50 riviä. Ensimmäisessä sarakkeessa ovat 50 ensimmäistä ajanhetken arvoa t kahden desimaalin tarkkuudella. Toisessa sarakkeessa on taas seuraavat 50 arvoa jne. Viimeisessä 11. sarakkeessa on 28 arvoa, sillä data loppuu kesken. Tehtävä on oikein, kun output.dat-tiedosto näyttää seuraavalta:
+  </p>
+
+  <p>
+  Kolme ensimmäistä riviä
+  </p>
+  <% partial 'partials/sample_output' do %>
+
+   1.08  &  31.26  &  65.09  &  97.47  & 128.28  & 156.09  & 190.26  & 239.08  & 274.36  & 314.07  & 346.38  \\
+   1.24  &  31.43  &  65.27  &  98.09  & 128.47  & 156.27  & 190.43  & 239.23  & 277.07  & 314.22  & 347.38  \\
+   1.40  &  32.09  &  65.46  &  98.28  & 132.09  & 156.46  & 191.09  & 239.38  & 277.22  & 314.36  & 348.08  \\
+
+  <% end %>
+  <p>
+  Kolme viimeistä riviä
+  </p>
+
+<% partial 'partials/sample_output' do %>
+
+  29.25  &  62.09  &  94.47  & 127.28  & 154.09  & 188.26  & 238.08  & 272.36  & 308.07  & 345.38  &  \\
+  29.43  &  62.27  &  97.09  & 127.47  & 154.28  & 188.43  & 238.23  & 274.07  & 308.22  & 346.08  &  \\
+  31.09  &  62.45  &  97.28  & 128.09  & 154.46  & 190.09  & 238.38  & 274.22  & 308.36  & 346.23  &  \\
+
+ <% end %>
+
+Kiinnitä tässäkin tehtävässä erityistä huomiota tulosteen formaattiin. Nyt jokaiselle luvulle varattu tila on yhteensä yhdeksän merkkiä.
+
+<% end %>
+
 
