@@ -7,243 +7,228 @@
 <% partial 'partials/material_heading' do %>
   Neljännen viikon tehtävät
 <% end %>
+<strong>Palauta ratkaisusi viimeistään ma 25.11. klo 21:00</strong>
 
-
-<% partial 'partials/exercise', locals: { name: 'More functions' } do %>
-
-  <p>
-  Tehtäväpohja on seuraavanlainen:
-  </p>
-
-  <% partial 'partials/code_highlight' do %>
-    def main():
-    t = np.arange(3) + 1             # Älä koske
-    ydot = np.arange(3) + 4             # Älä koske
-    f = 1.41                          # Älä koske
-    tau = aliohjelma1(t,f)            # Älä koske
-    z1,z2 = aliohjelma2(t,ydot,f,tau) # Älä koske
-    print(tau,z1,z2)                # Älä koske
-
-    #Kirjoita aliohjelma1 ja aliohjelma2 tähän
-  <% end %>
-
-  <p>
-  Tulet tarvitsemaan tämän tehtävän koodia myöhemmin tällä kurssilla, pidä se siis tallessa! Sinun tehtäväsi on luoda funktio, joka laskee datan periodisuuden. Funktio laskee taun arvon ja palauttaa.
-  </p>
-<p>
-Tau lasketaan seuraavasti:
-</p>
-<img src="https://raw.githubusercontent.com/materiaalit/tilai-18/master/source/taulasku.gif" alt="Taun lauseke">
-  <p>
-
-  Saadaksesi arvot Z1 ja Z2 tarvitset taun arvoa.
-  </p>
-<p>
-Z1 lasketaan seuraavasti:
-</p>
-<img src="https://raw.githubusercontent.com/materiaalit/tilai-18/master/source/Z1lasku.gif" alt="Z1 lauseke">
-
-
-<p>
-Z2 lasketaan seuraavasti:
-</p>
-<img src="https://raw.githubusercontent.com/materiaalit/tilai-18/master/source/Z2lasku.gif" alt="Z2 lauseke">
-  <p>
-  Aloita tehtävä tekemällä aliohjelma1(t,f), joka laskee taun arvon. Luo seuraavaksi aliohjelma2(t, ydot, f, tau), joka laskee Z1 ja Z2 arvot. Tulosta lopuksi saadut arvot:
-  </p>
-
-
-
-
-  <% partial 'partials/sample_output' do %>
-0.049645390070921835 1.148441416869862 11.856172028052134
-  <% end %>
-
-<% end %>
-
-<p>
-Python3:n float-tyypillä on monia ominaisuuksia. Datan käsittelyssä tahdomme usein vähentää desimaaleja. Tutustu laajaan formatointiohjeeseen
-<a href="http://www.python-course.eu/python3_formatted_output.php"target="_blank">täällä.</a>
-</p>
-
-<% partial 'partials/exercise', locals: { name: 'Format' } do %>
-
-  <p>
-  Seuraavaksi todella yksinkertainen harjoitus Pythonin float numeroiden formatista.
-  Tehtäväpohja on seuraavanlainen:
-  </p>
-
-  <% partial 'partials/code_highlight' do %>
-  def main():
-    a = 2/3
-    b = np.pi
-    c = 11.123123123123
-  <% end %>
-
-  <p>
-  Tehtävä on tehty oikein, kun tulostat:
-  </p>
-
-  <% partial 'partials/sample_output' do %>
-0.67
-3.1416
-11.123
-0.67 3.1416 11.123
-  <% end %>
-
-<% end %>
-
-<p>
-Mittauksista ja muista tutkimuksista saadaan usein isoja, jopa tuhansien rivien datatiedostoja. Näiden käsittelyyn Python3 on tehokas työkalu.
-</p>
-
-<p>
-Datan käsittely tapahtuu Python3:ssa helpoiten file-tyyppisillä muuttujilla. Ensin määritellään, mitä tiedostoa käsitellään, kuinka sitä käsitellään ja miten käsittely jatkuu. Lopuksi tiedosto suljetaan, jottei se korruptoidu.
-</p>
+<% partial 'partials/exercise', locals: { name: 'Throwing three dice' } do %>
+  
+  Tarkastellaan kolmen tavallisen nopan heittoa, jossa jokaisella nopalla voidaan siis saada yksi luvuista 1–6. Tehtävänäsi on käydä for- ja if-rakenteita käyttäen läpi kaikki mahdolliset yhdistelmät kolmen nopan heitossa saatavista silmäluvuista. Olemme erityisen kiinnostuneita tapauksista, joissa kolmen nopan silmälukujen summa on joko 5 tai jaollinen 10:llä: esim. summa 5 tulee yhdistelmästä (1,1,3) ja 10:llä jaollinen on yhdistelmän (1,3,6) summa.
+Tulosta kaikki kolmen nopan silmälukujen mahdolliset yhdistelmät (jokainen omalle rivilleen) muodossa
 
 <% partial 'partials/code_highlight' do %>
-  def main():
-     file = open('input.dat', 'r')
+	(1,4,2)
   <% end %>
-
-<p>
-Ylläoleva komento avaa tiedoston input.dat ja asettaa sen lukutilaan. Lukutilassa voimme kätevästi siirtää datatiedoston arvoja muuttujiin.
-</p>
+  
+sekä tulosta lisäksi kiinnostavien yhdistelmien rivin loppuun välilyönnillä erotettu * -merkki:
 
 <% partial 'partials/code_highlight' do %>
-  def main():
-     file = open('input.dat', 'r')
-     tiedot = file.readlines()
-
-     x = []
-     y = []
-
-     for rivi in tiedot:
-        osarivi = rivi.split()
-        x.append(float(osarivi[0]))
-        y.append(float(osarivi[1]))
+	(1,1,3) *
   <% end %>
 
-<p>
-Ylläoleva koodi siis avaa input.dat-tiedoston ja lukee siitä kaksi saraketta muuttujiin x ja y.
-</p>
-
-<p>
-NumPy sisältää myös kätevän tiedoston luku ominaisuuden.
-</p>
+Lopuksi tulosta omalle rivilleen kaikkien kolmen nopan heiton erilaisten silmälukujen yhdistelmien lukumäärä ja kiinnostavien tapausten (silmälukujen summa 5 tai 10:llä jaollinen) lukumäärä muodossa:
 
 <% partial 'partials/code_highlight' do %>
-  def main():
-     infile = 'input.dat'
-
-     x = np.loadtxt(infile, usecols=(0,))
-     y = np.loadtxt(infile, usecols=(1,))
+	Kaikki erilaiset kolmen nopan heitot XXX kpl, joista kiinnostavia YY kpl.
   <% end %>
 
-<p>
-Ylläolevalla komennolla käyttäjän ei tarvitse käydä dataa uudelleen for-loopilla läpi vaan se saadaan suoraan muuttujille.
-</p>
+missä XXX ja YY ovat lukumäärät.
 
-<p>
-Vastaavasti tiedostoon kirjoittaminen toimii lähes samalla tavalla.
-</p>
-
-<% partial 'partials/code_highlight' do %>
-  def main():
-     file = open('output.dat', 'w')
-  <% end %>
-
-<p>
-Nyt olemme alustaneet output.dat-tiedoston ja määrittäneet että siihen tallennetaan tietoa. Seuraava vaihe riippuu täysin siitä mitä tiedostoon halutaan laittaa, mutta esimerkiksi lukujen kirjoitus tapahtuisi seuraavasti:
-</p>
-
-<% partial 'partials/code_highlight' do %>
-     file = open('output.dat', 'w')
-     i = 0
-     while (i < len(x)):
-        file.write("%6.2f\n"%(x[i]))
-        i++
-    file.close()
-  <% end %>
-
-  <p>
-Tämä koodi kirjoittaa kuvitellun muuttujan x listan kokonaisuudessaan output.dat-tiedostoon, siten että luvut ovat allekkain.
-  </p>
-
-
-  <% partial 'partials/exercise', locals: { name: 'Find' } do %>
-
-        <p>
-        Tehtäväpohja on seuraavanlainen:
-        </p>
-
-        <% partial 'partials/code_highlight' do %>
-        def main():
-              lista=[]
-        #Tee tehtävä tähän
-
-        ###################################
-        print(lista)
-
-        <% end %>
-
-        <p>
-        Tehtävän mukana tulee tiedosto model.dat. Tehtävänäsi löytää datasta rivi, missä on D-sarakkeessa luku 25 (25. päivä) ja siirtää se annettuun lista muuttujaan. Tehtävä on oikein, kun listassa on seuraava rivi:
-        </p>
-
-        <% partial 'partials/sample_output' do %>
-['2454399.48 2007 10 25 23 35']
-        <% end %>
-
-      <% end %>
-
-
-  <% partial 'partials/exercise', locals: { name: 'Data handling' } do %>
-
-  <p>
-  Tehtäväpohjassa tulee mukana input.dat-tiedosto. Tehtävänäsi on lukea input.dat-tiedosto ja luoda output.dat-tiedosto, joka on valmiiksi LaTeX-taulukko muotoa. Output.dat-tiedostossa pitää olla yhdellä rivillä 8 lukua ja rivejä pitäisi olla 25. Tehtävä on oikein, kun output.dat-tiedosto näyttää seuraavalta:
-  </p>
-
-  <% partial 'partials/sample_output' do %>
-  0.01  &  7.73  &  1.20  &  7.69  &  2.05  &  7.72  &  3.13  &  7.69  \\
-  4.16  &  7.69  &  5.03  &  7.70  &  5.14  &  7.71  &  5.17  &  7.73  \\
-  ...
-  <% end %>
-
-  <p>
-  Huomaa, että testien läpäisemiseksi rivien tulee olla tarkalleen esimerkin mukaisessa formaatissa (jokaiselle luvulle on varattu kahdeksan merkin tila, luvun jälkeen kaksi välilyöntiä ennen &-merkkiä).
-
-<% end %>
-
-
-<% partial 'partials/exercise', locals: { name: 'More data' } do %>
-
-  <p>
-  Tehtäväpohjassa tulee mukana input.dat-tiedosto. Tehtävänäsi on lukea tämä tiedosto, jossa on 528 riviä, ja luoda output.dat-tiedosto, joka on valmiiksi LaTeX-taulukon muodossa. Output.dat-tiedostossa on 50 riviä. Ensimmäisessä sarakkeessa ovat 50 ensimmäistä ajanhetken arvoa t kahden desimaalin tarkkuudella. Toisessa sarakkeessa on taas seuraavat 50 arvoa jne. Viimeisessä 11. sarakkeessa on 28 arvoa, sillä data loppuu kesken. Tehtävä on oikein, kun output.dat-tiedosto näyttää seuraavalta:
-  </p>
-
-  <p>
-  Kolme ensimmäistä riviä
-  </p>
-  <% partial 'partials/sample_output' do %>
-
-   1.08  &  31.26  &  65.09  &  97.47  & 128.28  & 156.09  & 190.26  & 239.08  & 274.36  & 314.07  & 346.38  \\
-   1.24  &  31.43  &  65.27  &  98.09  & 128.47  & 156.27  & 190.43  & 239.23  & 277.07  & 314.22  & 347.38  \\
-   1.40  &  32.09  &  65.46  &  98.28  & 132.09  & 156.46  & 191.09  & 239.38  & 277.22  & 314.36  & 348.08  \\
-
-  <% end %>
-  <p>
-  Kolme viimeistä riviä
-  </p>
+Esimerkkitulostus olisi siis:
 
 <% partial 'partials/sample_output' do %>
+	(1,1,1)
+	(1,1,2)
+	(1,1,3) *
+	   .
+	   .
+	   .
+	(6,6,5)
+	(6,6,6)
+	Kaikki erilaiset kolmen nopan heitot XXX kpl, joista kiinnostavia YY kpl.
+<% end %>
 
-  29.25  &  62.09  &  94.47  & 127.28  & 154.09  & 188.26  & 238.08  & 272.36  & 308.07  & 345.38  &  \\
-  29.43  &  62.27  &  97.09  & 127.47  & 154.28  & 188.43  & 238.23  & 274.07  & 308.22  & 346.08  &  \\
-  31.09  &  62.45  &  97.28  & 128.09  & 154.46  & 190.09  & 238.38  & 274.22  & 308.36  & 346.23  &  \\
+Tässä tehtävässä joudut käyttämään sisäkkäisiä for-rakenteita (eri noppien heitoille) ja niistä yhden sisään sijoittamaan if-rakenteen (etsimään kiinnostavat tapaukset).
+<% end %>
 
- <% end %>
 
-Kiinnitä tässäkin tehtävässä erityistä huomiota tulosteen formaattiin. Nyt jokaiselle luvulle varattu tila on yhteensä yhdeksän merkkiä.
+
+
+<% partial 'partials/exercise', locals: { name: 'Data statistics' } do %>
+
+Kirjoita funktio data_statistics, jolle annetaan sisäänsyöttöparametrina lista tiedostojen nimiä (lista, jonka alkiot ovat merkkijonomuuttujia). Tiedostot on muotoiltu siten, että niiden joka rivillä on yksi luku. Funktio lukee tiedoston kerrallaan, ja laskee kaikkien kyseisessä tiedostossa olevien lukujen keskiarvon, keskihajonnan sekä mediaanin. Voit käyttää datan lukemiseen NumPy:n funktiota loadtxt sekä tunnuslukujen laskemiseen mean, std ja median -funktioita. Testaa kirjoittamasi data_statistics -funktion toimintaa main -funktiossa tehtävänannon tiedostoilla inputdata1.dat ja inputdata2.dat tulostamalla tiedostojen nimet ja luvut kahden desimaalin tarkkuudella:
+
+
+  <% partial 'partials/sample_output' do %>
+  Tiedoston inputdata1.dat statistiikka: keskiarvo 24.66, keskihajonta 7.31, mediaani 24.16
+  Tiedoston inputdata2.dat statistiikka: keskiarvo 108827.71, keskihajonta 1026863.02, mediaani 202.98
+  <% end %>
+
+<% end %>
+
+
+<% partial 'partials/exercise', locals: { name: 'Creating equation' } do %>
+
+Tee funktio create_equation, joka ottaa ensimmäisenä argumenttinaan listan positiivisia kokonaislukuja sekä toisena argumenttinaan listan plus- ja miinusmerkkejä, jotka ilmoittavat järjestyksessä mitä laskuoperaatioita suoritetaan funktiolle annetun ensimmäisen argumentin listan lukujen välillä. Funktio palauttaa merkkijonon, jossa luvut ja niiden väliset laskutoimitukset on kirjoitettu auki ja koko laskutoimituksen lopputulos yhtäsuuruusmerkin jälkeen. 
+Esimerkki:
+
+<% partial 'partials/code_highlight' do %>
+	create_equation([2,7,3,1],['+','+','–'])
+  <% end %>
+palauttaa merkkijonon (huomaa välilyönnit laskutoimitusmerkkien, yhtäsuurusmerkin ja numeroiden välissä)
+
+<% partial 'partials/code_highlight' do %>
+ 	'2 + 7 + 3 – 1 = 11'
+   <% end %>
+Varaudu tilanteeseen, että funktiota kutsuttaessa annetut listat eivät ole oikeanpituisia: laskutoimitusmerkkejä pitää olla täsmälleen yksi vähemmän kuin lukuja. Jos näin ei ole, funktio palauttaa tyhjän merkkijonon, eli
+
+<% partial 'partials/code_highlight' do %>
+	create_equation([2,7,3,1],['+','+'])
+  <% end %>
+palauttaa merkkijonon
+
+<% partial 'partials/code_highlight' do %>
+	''
+  <% end %>
+Poikkeuksena tähän sallitaan tilanne, että toisena argumenttina funktiolle annetaan yhden alkion pituinen lista, joko ['+'] tai ['-']. Tällöin käytetään tätä laskutoimitusta kaikkien annettujen lukujen välillä, eli
+
+<% partial 'partials/code_highlight' do %>
+	create_equation([2,7,3,1],['-'])
+  <% end %>
+palauttaa merkkijonon
+
+<% partial 'partials/code_highlight' do %>
+	'2 - 7 - 3 - 1 = -9'
+  <% end %>
+Muihin poikkeustilanteisiin ei tarvitse varautua. Testaa kirjoittamasi create_equation -funktion toimintaa main -funktiossa yllä kaikkien olevien kolme esimerkin tapauksessa tulostamalla niiden palauttamat  merkkijonot järjestyksessä:
+
+<% partial 'partials/sample_output' do %>
+	2 + 7 + 3 – 1 = 11
+	
+	2 - 7 - 3 - 1 = -9
+  <% end %>
+
+Tämän tehtävän ratkaisusta saat 3 pistettä.
+
+<% end %>
+
+
+
+<% partial 'partials/exercise', locals: { name: 'Arrays' } do %>
+
+Olemme tähän mennessä kurssilla käyttäneet Pythonin listamuuttujista tyyppejä list ja tuple. Tutustutaan seuraavaksi Numpy-kirjaston avulla taulukoihin (engl. array). Taulukot voivat listamuuttujista poiketen olla useampiulotteisia, mutta pitää sisällään vain yhdentyyppisiä arvoja (esim. taulukon kaikki alkiot tyyppiä float). NumPy otetaan käyttöön komennolla
+
+<% partial 'partials/sample_output' do %>
+	import numpy as np
+  <% end %>
+jonka jälkeen kaikki NumPyn funktiot ovat kutsuttavissa pistenotaatiolla: np.funktionnimi() 
+Tieteellisessä laskennassa ehkäpä useimmin vastaantuleva taulukko on kaksiulotteinen, joka määritellään antamalla taulukon rivit listojen listana:
+
+<% partial 'partials/sample_output' do %>
+	In [1]: a = np.array([[1,2,3], [4,5,6], [7,8,9]])
+	In [2]: a
+	Out[2]:
+	array([[1, 2, 3],
+	       [4, 5, 6],
+	       [7, 8, 9]])
+         <% end %>
+Taulukon alkioihin viitataan []-sulkeissa pilkuilla erotettujen indeksien avulla. Kaksiulotteisilla taulukolla ensimmäinen indeksi viittaa taulukon riviin ja toinen sen sarakkeeseen, ja indeksointi alkaa 0:sta kuten listamuuttujillakin. Tietty osa taulukosta saadaan poimittua antamalla halutun indeksivälin alku ja loppu : -merkillä erotettuna. Koko rivi tai sarake saadaan poimittua pelkällä : -merkillä. Esim. edellämääritellylle taulukolle a 
+
+<% partial 'partials/sample_output' do %>
+	In [3]: a[0,2]
+	Out[3]: 3
+	In [4]: a[1:3,0:2]
+	Out[4]: 
+	array([[4, 5],
+ 	      [7, 8]])
+	In [5]: a[0,:]
+	Out[5]: array([1, 2, 3])
+  <% end %>
+Taulukon koon saa selville shape ja size -funktioilla:
+
+<% partial 'partials/sample_output' do %>
+	In [69]: np.shape(a)
+	Out[69]: (3, 3)
+	In [70]: np.size(a)
+	Out[70]: 9
+  <% end %>
+Taulukkoja voidaan käyttää peruslaskutoimituksissa (samankokoisia taulukoita voidaan laskea yhteen, vähentää, kertoa ja jakaa)  ja monien funktioiden argumentteina. Tällöin laskutoimitukset suoritetaan alkioittain ja tuloksena saadaan alkuperäisen kanssa samankokoinen taulukko (huomaa erityisesti, että * -merkillä tehty kertolasku samankokoisten taulukoiden välillä on nimenomaan alkioittainen kertolasku, eikä matriisikertolasku).
+
+Kokeile taulukkolaskuja määrittelemällä taulukot
+
+<% partial 'partials/sample_output' do %>
+	a=np.array([[1,2,3], [4,5,6], [7,8,9]])
+	b=np.array([[-2.0,2.5,3.8], [0.1,-17.9,6.0], [7.1,8.8,10.3]])
+  <% end %>
+ja laske näiden taulukoiden summa, tulo, summan sini sekä summan kolmas potenssi. Määritä näiden neljän tulostaulukon pienin ja suurin alkio, ja tulosta nämä
+
+
+
+  <% partial 'partials/sample_output' do %>	
+  Taulukon a+b pienin ja suurin alkio: XX1_min, XX1_max
+	Taulukon a*b pienin ja suurin alkio: XX2_min, XX2_max
+	Taulukon sin(a+b) pienin ja suurin alkio: XX3_min, XX3_max
+	Taulukon (a+b)**3 pienin ja suurin alkio: XX4_min, XX4_max
+  <% end %>
+
+  missä luvut XX1_min, XX1_max jne. ovat kyseisten taulukoiden pienimmät ja suurimmat alkiot tulostettuna desimaalilukuina kolmen desimaalin tarkkuudella.
+
+<% end %>
+
+
+
+<% partial 'partials/exercise', locals: { name: 'Matrices' } do %>
+
+  NumPy:ssa on myös matriisimuuttuja (engl. matrix), joka käyttäytyy muuten kuin taulukkomuuttuja, mutta matriisimuuttujien kertolasku on määritelty samain kuin matematiikassa (eli kahdelle samankokoiselle matriisille tai erikokoisille matriiseille, joista ensimmäisessä on sama määrä sarakkeita kuin jälkimmäisessä on rivejä). Kokeile nyt matriisien laskutoimituksia määrittelemällä ensin edellisen tehtävän taulukot myös matriiseina:
+
+	
+  <% partial 'partials/sample_output' do %>	
+	a=np.array([[1,2,3], [4,5,6], [7,8,9]])
+	b=np.array([[-2.0,2.5,3.8], [0.1,-17.9,6.0], [7.1,8.8,10.3]])
+	A=np.mat([[1,2,3], [4,5,6], [7,8,9]])
+	B=np.mat([[-2.0,2.5,3.8], [0.1,-17.9,6.0], [7.1,8.8,10.3]])
+
+  <% end %>
+
+ja laskemalla summa, tulo, summan sini sekä summan kolmas potenssi sekä taulukoiden a ja b välillä että matriisien A ja B välillä. Vertaile saamiasi tuloksia, esim. summalle:
+
+<% partial 'partials/sample_output' do %>	
+	In [1]: summa_taulukko = a + b
+	In [2]: summa_matriisi = A + B
+	In [3]: summa_taulukko == summa_matriisi
+	Out[3]: 
+	matrix([[ True,  True,  True],
+		  [ True,  True,  True],
+	        [ True,  True,  True]])
+
+          <% end %>
+eli matriisien välinen yhteenlasku tapahtuu samanlailla alkioittain kuin taulukoilla ja tuottaa saman tuloksen. Voimme myös vertailla, ovatko kaikki alkiot samoja vai ei NumPy:n all -funktion avulla
+
+<% partial 'partials/sample_output' do %>	
+	In [4]: np.all(summa_taulukko==summa_matriisi)
+	Out[4]: True
+
+  <% end %>
+Eli tässä tapauksessa, kun kaikki alkiot ovat keskenään samat, all -funktio palauttaa totuusarvon True. Tee vertailut (if – else -rakenteella) kaikille neljälle laskutoimitukselle (summa, tulo, summan sini sekä summan kolmas potenssi) ja tulosta vertailujen perusteella:
+
+<% partial 'partials/sample_output' do %>
+	Taulukkojen ja matriisien summat ovat samat
+	Taulukkojen ja matriisien tulot eivät ole samat
+	Taulukkojen ja matriisien summan sinit ovat samat
+	Taulukkojen ja matriisien potenssit eivät ole samat
+
+  <% end %>
+
+<% end %>
+
+
+
+<% partial 'partials/exercise', locals: { name: 'Resistance' } do %>
+
+Varsinkin laboratoriotöissä haluamme usein sovittaa dataan suoran y = ax + b ja tietää sen kulmakertoimen a ja vakiotermin b arvot. Pythonin avulla tämän voi toteuttaa hyödyntämällä pienimmän neliösumman menetelmää.
+Olet mitannut virtaa ja jännitettä yksinkertaisessa virtapiirissä, jossa on vastus. Ohmin lain mukaan jännite U vastuksen yli on suoraan verrannollinen virtapiirissä kulkevaan virtaan, U = RI. Sovittamalla mittausdataan (I, U) suoran saamme siten selville vastuksen R suuruuden. Mittausdata on tiedostossa input.dat, jossa ensimmäisellä sarakkeella on virta (yksiköissä milliampeeri eli 10–3 A) ja toisella sarakkeella jännite (voltteina). Tee suoran sovitus dataan käyttämällä NumPy:n polyfit -funktiota. Tulosta saamasi kulmakerroin eli vastuksen arvo desimaalilukuna yhden desimaalin tarkkuudella:
+
+
+  <% partial 'partials/sample_output' do %>
+  R = 101.7 ohmia
+  <% end %>
 
 <% end %>
